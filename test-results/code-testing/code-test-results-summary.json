@@ -1,0 +1,525 @@
+{
+  "status": "failed",
+  "timestamp": "2026-04-24T06:46:28.760945+00:00",
+  "summary": {
+    "total": 89,
+    "passed": 44,
+    "failed": 45,
+    "skipped": 0,
+    "pass_rate": 49.4
+  },
+  "suites": [
+    {
+      "title": "test_auth_integration.py",
+      "file": "tests/code-testing/system-integration/test_auth_integration.py",
+      "tests": [
+        {
+          "title": "test_login_success",
+          "status": "failed"
+        },
+        {
+          "title": "test_login_invalid_email",
+          "status": "failed"
+        },
+        {
+          "title": "test_login_invalid_password",
+          "status": "failed"
+        },
+        {
+          "title": "test_login_invalid_email_format",
+          "status": "failed"
+        },
+        {
+          "title": "test_login_empty_password",
+          "status": "failed"
+        },
+        {
+          "title": "test_logout_success",
+          "status": "failed"
+        },
+        {
+          "title": "test_logout_without_session",
+          "status": "failed"
+        },
+        {
+          "title": "test_login_inactive_user",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "test_records_integration.py",
+      "file": "tests/code-testing/system-integration/test_records_integration.py",
+      "tests": [
+        {
+          "title": "test_get_all_records_empty",
+          "status": "failed"
+        },
+        {
+          "title": "test_create_record_success",
+          "status": "failed"
+        },
+        {
+          "title": "test_create_record_validation_error",
+          "status": "failed"
+        },
+        {
+          "title": "test_create_record_unauthenticated",
+          "status": "failed"
+        },
+        {
+          "title": "test_get_all_records_with_data",
+          "status": "failed"
+        },
+        {
+          "title": "test_update_record_success",
+          "status": "failed"
+        },
+        {
+          "title": "test_update_record_not_found",
+          "status": "failed"
+        },
+        {
+          "title": "test_update_record_invalid_id",
+          "status": "failed"
+        },
+        {
+          "title": "test_delete_record_success",
+          "status": "failed"
+        },
+        {
+          "title": "test_delete_record_not_found",
+          "status": "failed"
+        },
+        {
+          "title": "test_delete_record_unauthenticated",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "test_summary_integration.py",
+      "file": "tests/code-testing/system-integration/test_summary_integration.py",
+      "tests": [
+        {
+          "title": "test_get_summary_with_records",
+          "status": "failed"
+        },
+        {
+          "title": "test_get_summary_no_records",
+          "status": "failed"
+        },
+        {
+          "title": "test_get_summary_unauthenticated",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "test_users_integration.py",
+      "file": "tests/code-testing/system-integration/test_users_integration.py",
+      "tests": [
+        {
+          "title": "test_get_user_profile_success",
+          "status": "failed"
+        },
+        {
+          "title": "test_get_user_profile_not_found",
+          "status": "failed"
+        },
+        {
+          "title": "test_get_user_profile_invalid_id",
+          "status": "failed"
+        },
+        {
+          "title": "test_get_user_profile_unauthenticated",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "test_config.py",
+      "file": "tests/code-testing/unit/test_config.py",
+      "tests": [
+        {
+          "title": "TestSettings::test_default_mongodb_url",
+          "status": "passed"
+        },
+        {
+          "title": "TestSettings::test_default_mongodb_database",
+          "status": "passed"
+        },
+        {
+          "title": "TestSettings::test_default_frontend_origin",
+          "status": "passed"
+        },
+        {
+          "title": "TestSettings::test_default_api_v1_prefix",
+          "status": "passed"
+        },
+        {
+          "title": "TestSettings::test_default_session_cookie_name",
+          "status": "passed"
+        },
+        {
+          "title": "TestSettings::test_default_session_max_age",
+          "status": "passed"
+        },
+        {
+          "title": "TestSettings::test_settings_from_env_variables",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "test_schemas.py",
+      "file": "tests/code-testing/unit/test_schemas.py",
+      "tests": [
+        {
+          "title": "TestLoginRequestDto::test_valid_login_request",
+          "status": "passed"
+        },
+        {
+          "title": "TestLoginRequestDto::test_invalid_email_format",
+          "status": "passed"
+        },
+        {
+          "title": "TestLoginRequestDto::test_empty_password_rejected",
+          "status": "passed"
+        },
+        {
+          "title": "TestCreateRecordDto::test_valid_income_record",
+          "status": "passed"
+        },
+        {
+          "title": "TestCreateRecordDto::test_valid_expense_record",
+          "status": "passed"
+        },
+        {
+          "title": "TestCreateRecordDto::test_invalid_type_rejected",
+          "status": "passed"
+        },
+        {
+          "title": "TestCreateRecordDto::test_zero_amount_rejected",
+          "status": "passed"
+        },
+        {
+          "title": "TestCreateRecordDto::test_negative_amount_rejected",
+          "status": "passed"
+        },
+        {
+          "title": "TestCreateRecordDto::test_empty_category_rejected",
+          "status": "passed"
+        },
+        {
+          "title": "TestCreateRecordDto::test_empty_description_rejected",
+          "status": "passed"
+        },
+        {
+          "title": "TestCreateRecordDto::test_invalid_date_format_rejected",
+          "status": "passed"
+        },
+        {
+          "title": "TestCreateRecordDto::test_valid_iso_datetime_accepted",
+          "status": "passed"
+        },
+        {
+          "title": "TestUpdateRecordDto::test_update_all_fields",
+          "status": "passed"
+        },
+        {
+          "title": "TestUpdateRecordDto::test_same_validations_as_create",
+          "status": "passed"
+        },
+        {
+          "title": "TestRecordDto::test_valid_record_response",
+          "status": "passed"
+        },
+        {
+          "title": "TestRecordListDto::test_empty_record_list",
+          "status": "passed"
+        },
+        {
+          "title": "TestRecordListDto::test_record_list_with_items",
+          "status": "passed"
+        },
+        {
+          "title": "TestFinancialSummaryDto::test_positive_balance",
+          "status": "passed"
+        },
+        {
+          "title": "TestFinancialSummaryDto::test_negative_balance",
+          "status": "passed"
+        },
+        {
+          "title": "TestFinancialSummaryDto::test_zero_balance",
+          "status": "passed"
+        },
+        {
+          "title": "TestUserProfileDto::test_valid_user_profile",
+          "status": "passed"
+        },
+        {
+          "title": "TestErrorDtos::test_error_dto",
+          "status": "passed"
+        },
+        {
+          "title": "TestErrorDtos::test_validation_error_detail",
+          "status": "passed"
+        },
+        {
+          "title": "TestErrorDtos::test_validation_error_dto",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "test_security.py",
+      "file": "tests/code-testing/unit/test_security.py",
+      "tests": [
+        {
+          "title": "TestPasswordHashing::test_hash_password_returns_string",
+          "status": "passed"
+        },
+        {
+          "title": "TestPasswordHashing::test_hash_password_different_each_time",
+          "status": "passed"
+        },
+        {
+          "title": "TestPasswordHashing::test_verify_password_correct",
+          "status": "passed"
+        },
+        {
+          "title": "TestPasswordHashing::test_verify_password_incorrect",
+          "status": "passed"
+        },
+        {
+          "title": "TestPasswordHashing::test_verify_password_empty_string",
+          "status": "passed"
+        },
+        {
+          "title": "TestSessionManagement::test_create_session_returns_token",
+          "status": "passed"
+        },
+        {
+          "title": "TestSessionManagement::test_create_session_stores_user_id",
+          "status": "passed"
+        },
+        {
+          "title": "TestSessionManagement::test_get_session_valid_token",
+          "status": "passed"
+        },
+        {
+          "title": "TestSessionManagement::test_get_session_invalid_token",
+          "status": "passed"
+        },
+        {
+          "title": "TestSessionManagement::test_get_session_expired_token",
+          "status": "passed"
+        },
+        {
+          "title": "TestSessionManagement::test_invalidate_session_removes_token",
+          "status": "passed"
+        },
+        {
+          "title": "TestSessionManagement::test_invalidate_session_nonexistent_token",
+          "status": "passed"
+        },
+        {
+          "title": "TestSessionManagement::test_session_expiry_timestamp",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "AuthContext.spec.tsx",
+      "file": "tests/code-testing/unit/AuthContext.spec.tsx",
+      "tests": [
+        {
+          "title": "No test suite found in file C:/Users/Krtrimaiq.ai/generated files/Expense Tracker Demo/tests/code-testing/unit/AuthContext.spec.tsx",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "DashboardPage.spec.tsx",
+      "file": "tests/code-testing/unit/DashboardPage.spec.tsx",
+      "tests": [
+        {
+          "title": "No test suite found in file C:/Users/Krtrimaiq.ai/generated files/Expense Tracker Demo/tests/code-testing/unit/DashboardPage.spec.tsx",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "ErrorBoundary.spec.tsx",
+      "file": "tests/code-testing/unit/ErrorBoundary.spec.tsx",
+      "tests": [
+        {
+          "title": "No test suite found in file C:/Users/Krtrimaiq.ai/generated files/Expense Tracker Demo/tests/code-testing/unit/ErrorBoundary.spec.tsx",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "FinancialSummary.spec.tsx",
+      "file": "tests/code-testing/unit/FinancialSummary.spec.tsx",
+      "tests": [
+        {
+          "title": "No test suite found in file C:/Users/Krtrimaiq.ai/generated files/Expense Tracker Demo/tests/code-testing/unit/FinancialSummary.spec.tsx",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "LoginPage.spec.tsx",
+      "file": "tests/code-testing/unit/LoginPage.spec.tsx",
+      "tests": [
+        {
+          "title": "No test suite found in file C:/Users/Krtrimaiq.ai/generated files/Expense Tracker Demo/tests/code-testing/unit/LoginPage.spec.tsx",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "Navbar.spec.tsx",
+      "file": "tests/code-testing/unit/Navbar.spec.tsx",
+      "tests": [
+        {
+          "title": "No test suite found in file C:/Users/Krtrimaiq.ai/generated files/Expense Tracker Demo/tests/code-testing/unit/Navbar.spec.tsx",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "ProtectedRoute.spec.tsx",
+      "file": "tests/code-testing/unit/ProtectedRoute.spec.tsx",
+      "tests": [
+        {
+          "title": "No test suite found in file C:/Users/Krtrimaiq.ai/generated files/Expense Tracker Demo/tests/code-testing/unit/ProtectedRoute.spec.tsx",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "RecordForm.spec.tsx",
+      "file": "tests/code-testing/unit/RecordForm.spec.tsx",
+      "tests": [
+        {
+          "title": "No test suite found in file C:/Users/Krtrimaiq.ai/generated files/Expense Tracker Demo/tests/code-testing/unit/RecordForm.spec.tsx",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "RecordList.spec.tsx",
+      "file": "tests/code-testing/unit/RecordList.spec.tsx",
+      "tests": [
+        {
+          "title": "No test suite found in file C:/Users/Krtrimaiq.ai/generated files/Expense Tracker Demo/tests/code-testing/unit/RecordList.spec.tsx",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "auth-flow.spec.ts",
+      "file": "tests/code-testing/system-integration/auth-flow.spec.ts",
+      "tests": [
+        {
+          "title": "Playwright Test did not expect test.describe() to be called here.\nMost common reasons include:\n- You are calling test.describe() in a configuration file.\n- You are calling test.describe() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "frontend-e2e-login.spec.ts",
+      "file": "tests/code-testing/system-integration/frontend-e2e-login.spec.ts",
+      "tests": [
+        {
+          "title": "Playwright Test did not expect test.describe() to be called here.\nMost common reasons include:\n- You are calling test.describe() in a configuration file.\n- You are calling test.describe() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "frontend-e2e-records.spec.ts",
+      "file": "tests/code-testing/system-integration/frontend-e2e-records.spec.ts",
+      "tests": [
+        {
+          "title": "Playwright Test did not expect test.describe() to be called here.\nMost common reasons include:\n- You are calling test.describe() in a configuration file.\n- You are calling test.describe() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "records-crud.spec.ts",
+      "file": "tests/code-testing/system-integration/records-crud.spec.ts",
+      "tests": [
+        {
+          "title": "Playwright Test did not expect test.describe() to be called here.\nMost common reasons include:\n- You are calling test.describe() in a configuration file.\n- You are calling test.describe() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "summary-calculation.spec.ts",
+      "file": "tests/code-testing/system-integration/summary-calculation.spec.ts",
+      "tests": [
+        {
+          "title": "Playwright Test did not expect test.describe() to be called here.\nMost common reasons include:\n- You are calling test.describe() in a configuration file.\n- You are calling test.describe() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "records-crud.spec.ts",
+      "file": "tests/code-testing/system-integration/records-crud.spec.ts",
+      "tests": [
+        {
+          "title": "\u25cf Test suite failed to run\n\n    Jest encountered an unexpected token\n\n    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.\n\n    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.\n\n    By default \"node_modules\" folder is ignored by transformers.\n\n    Here's what you can do:\n     \u2022 If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.\n     \u2022 If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript\n     \u2022 To have some of your \"node_modules\" files transformed, you can specify a custom \"transformIgnorePatterns\" in your config.\n     \u2022 If you need a custom transformation specify a \"transform\" option in your config.\n     \u2022 If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the \"moduleNameMapper\" config option.\n\n    You'll find more details and examples of these config options in the docs:\n    https://jestjs.io/docs/configuration\n    For information about custom transformations, see:\n    https://jestjs.io/docs/code-transformation\n\n    Details:\n\n    SyntaxError: C:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\code-testing\\system-integration\\records-crud.spec.ts: Missing semicolon. (5:19)\n\n    \u001b[0m \u001b[90m 3 |\u001b[39m\n     \u001b[90m 4 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Records CRUD \u2014 Full Integration'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n    \u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m   \u001b[36mlet\u001b[39m sessionCookie\u001b[33m:\u001b[39m string\u001b[33m;\u001b[39m\n     \u001b[90m   |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n     \u001b[90m 6 |\u001b[39m   \u001b[36mlet\u001b[39m recordId\u001b[33m:\u001b[39m string\u001b[33m;\u001b[39m\n     \u001b[90m 7 |\u001b[39m\n     \u001b[90m 8 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeAll(\u001b[36masync\u001b[39m ({ request }) \u001b[33m=>\u001b[39m {\u001b[0m\n\n      at constructor (node_modules/@babel/parser/src/parse-error.ts:95:45)\n      at Parser.toParseError [as raise] (node_modules/@babel/parser/src/tokenizer/index.ts:1504:19)\n      at Parser.raise [as semicolon] (node_modules/@babel/parser/src/parser/util.ts:149:10)\n      at Parser.semicolon [as parseVarStatement] (node_modules/@babel/parser/src/parser/statement.ts:1252:10)\n      at Parser.parseVarStatement [as parseStatementContent] (node_modules/@babel/parser/src/parser/statement.ts:612:21)\n      at Parser.parseStatementContent [as parseStatementLike] (node_modules/@babel/parser/src/parser/statement.ts:482:17)\n      at Parser.parseStatementLike [as parseStatementListItem] (node_modules/@babel/parser/src/parser/statement.ts:431:17)\n      at Parser.parseStatementListItem [as parseBlockOrModuleBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1444:16)\n      at Parser.parseBlockOrModuleBlockBody [as parseBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1417:10)\n      at Parser.parseBlockBody [as parseBlock] (node_modules/@babel/parser/src/parser/statement.ts:1385:10)\n      at Parser.parseBlock [as parseFunctionBody] (node_modules/@babel/parser/src/parser/expression.ts:2621:24)\n      at Parser.parseFunctionBody [as parseArrowExpression] (node_modules/@babel/parser/src/parser/expression.ts:2562:10)\n      at Parser.parseArrowExpression [as parseParenAndDistinguishExpression] (node_modules/@babel/parser/src/parser/expression.ts:1850:12)\n      at Parser.parseParenAndDistinguishExpression [as parseExprAtom] (node_modules/@babel/parser/src/parser/expression.ts:1170:21)\n      at Parser.parseExprAtom [as parseExprSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:742:23)\n      at Parser.parseExprSubscripts [as parseUpdate] (node_modules/@babel/parser/src/parser/expression.ts:721:21)\n      at Parser.parseUpdate [as parseMaybeUnary] (node_modules/@babel/parser/src/parser/expression.ts:683:23)\n      at Parser.parseMaybeUnary [as parseMaybeUnaryOrPrivate] (node_modules/@babel/parser/src/parser/expression.ts:417:14)\n      at Parser.parseMaybeUnaryOrPrivate [as parseExprOps] (node_modules/@babel/parser/src/parser/expression.ts:429:23)\n      at Parser.parseExprOps [as parseMaybeConditional] (node_modules/@babel/parser/src/parser/expression.ts:384:23)\n      at Parser.parseMaybeConditional [as parseMaybeAssign] (node_modules/@babel/parser/src/parser/expression.ts:301:21)\n      at parseMaybeAssign (node_modules/@babel/parser/src/parser/expression.ts:257:12)\n      at Parser.callback [as allowInAnd] (node_modules/@babel/parser/src/parser/expression.ts:3197:12)\n      at Parser.allowInAnd [as parseMaybeAssignAllowIn] (node_modules/@babel/parser/src/parser/expression.ts:256:17)\n      at Parser.parseMaybeAssignAllowIn [as parseMaybeAssignAllowInOrVoidPattern] (node_modules/@babel/parser/src/parser/expression.ts:3311:17)\n      at Parser.parseMaybeAssignAllowInOrVoidPattern [as parseExprListItem] (node_modules/@babel/parser/src/parser/expression.ts:2793:18)\n      at Parser.parseExprListItem [as parseCallExpressionArguments] (node_modules/@babel/parser/src/parser/expression.ts:1042:14)\n      at Parser.parseCallExpressionArguments [as parseCoverCallAndAsyncArrowHead] (node_modules/@babel/parser/src/parser/expression.ts:922:29)\n      at Parser.parseCoverCallAndAsyncArrowHead [as parseSubscript] (node_modules/@babel/parser/src/parser/expression.ts:804:19)\n      at Parser.parseSubscript [as parseSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:763:19)\n      at Parser.parseSubscripts [as parseExprSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:748:17)\n      at Parser.parseExprSubscripts [as parseUpdate] (node_modules/@babel/parser/src/parser/expression.ts:721:21)\n      at Parser.parseUpdate [as parseMaybeUnary] (node_modules/@babel/parser/src/parser/expression.ts:683:23)\n      at Parser.parseMaybeUnary [as parseMaybeUnaryOrPrivate] (node_modules/@babel/parser/src/parser/expression.ts:417:14)\n      at Parser.parseMaybeUnaryOrPrivate [as parseExprOps] (node_modules/@babel/parser/src/parser/expression.ts:429:23)\n      at Parser.parseExprOps [as parseMaybeConditional] (node_modules/@babel/parser/src/parser/expression.ts:384:23)\n      at Parser.parseMaybeConditional [as parseMaybeAssign] (node_modules/@babel/parser/src/parser/expression.ts:301:21)\n      at Parser.parseMaybeAssign [as parseExpressionBase] (node_modules/@babel/parser/src/parser/expression.ts:226:23)\n      at parseExpressionBase (node_modules/@babel/parser/src/parser/expression.ts:217:39)\n      at Parser.callback [as allowInAnd] (node_modules/@babel/parser/src/parser/expression.ts:3192:16)\n      at Parser.allowInAnd [as parseExpression] (node_modules/@babel/parser/src/parser/expression.ts:217:17)\n      at Parser.parseExpression [as parseStatementContent] (node_modules/@babel/parser/src/parser/statement.ts:688:23)\n      at Parser.parseStatementContent [as parseStatementLike] (node_modules/@babel/parser/src/parser/statement.ts:482:17)\n      at Parser.parseStatementLike [as parseModuleItem] (node_modules/@babel/parser/src/parser/statement.ts:419:17)\n      at Parser.parseModuleItem [as parseBlockOrModuleBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1443:16)\n      at Parser.parseBlockOrModuleBlockBody [as parseBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1417:10)\n      at Parser.parseBlockBody [as parseProgram] (node_modules/@babel/parser/src/parser/statement.ts:229:10)\n      at Parser.parseProgram [as parseTopLevel] (node_modules/@babel/parser/src/parser/statement.ts:203:25)\n      at Parser.parseTopLevel [as parse] (node_modules/@babel/parser/src/parser/index.ts:83:25)\n      at parse (node_modules/@babel/parser/src/index.ts:86:38)\n      at parser (node_modules/@babel/core/src/parser/index.ts:29:19)\n          at parser.next (<anonymous>)\n      at normalizeFile (node_modules/@babel/core/src/transformation/normalize-file.ts:50:24)\n          at normalizeFile.next (<anonymous>)\n      at run (node_modules/@babel/core/src/transformation/index.ts:41:36)\n          at run.next (<anonymous>)\n      at transform (node_modules/@babel/core/src/transform.ts:29:20)\n          at transform.next (<anonymous>)\n      at evaluateSync (node_modules/gensync/index.js:251:28)\n      at sync (node_modules/gensync/index.js:89:14)\n      at fn (node_modules/@babel/core/src/errors/rewrite-stack-trace.ts:99:14)\n      at transformSync (node_modules/@babel/core/src/transform.ts:66:52)\n      at ScriptTransformer.transformSource (node_modules/@jest/transform/build/ScriptTransformer.js:545:31)\n      at ScriptTransformer._transformAndBuildScript (node_modules/@jest/transform/build/ScriptTransformer.js:674:40)\n      at ScriptTransformer.transform (node_modules/@jest/transform/build/ScriptTransformer.js:726:19)",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "summary-calculation.spec.ts",
+      "file": "tests/code-testing/system-integration/summary-calculation.spec.ts",
+      "tests": [
+        {
+          "title": "\u25cf Test suite failed to run\n\n    Jest encountered an unexpected token\n\n    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.\n\n    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.\n\n    By default \"node_modules\" folder is ignored by transformers.\n\n    Here's what you can do:\n     \u2022 If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.\n     \u2022 If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript\n     \u2022 To have some of your \"node_modules\" files transformed, you can specify a custom \"transformIgnorePatterns\" in your config.\n     \u2022 If you need a custom transformation specify a \"transform\" option in your config.\n     \u2022 If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the \"moduleNameMapper\" config option.\n\n    You'll find more details and examples of these config options in the docs:\n    https://jestjs.io/docs/configuration\n    For information about custom transformations, see:\n    https://jestjs.io/docs/code-transformation\n\n    Details:\n\n    SyntaxError: C:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\code-testing\\system-integration\\summary-calculation.spec.ts: Missing semicolon. (5:19)\n\n    \u001b[0m \u001b[90m 3 |\u001b[39m\n     \u001b[90m 4 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Financial Summary Calculation'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n    \u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m   \u001b[36mlet\u001b[39m sessionCookie\u001b[33m:\u001b[39m string\u001b[33m;\u001b[39m\n     \u001b[90m   |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n     \u001b[90m 6 |\u001b[39m   \u001b[36mlet\u001b[39m incomeId\u001b[33m:\u001b[39m string\u001b[33m;\u001b[39m\n     \u001b[90m 7 |\u001b[39m   \u001b[36mlet\u001b[39m expenseId\u001b[33m:\u001b[39m string\u001b[33m;\u001b[39m\n     \u001b[90m 8 |\u001b[39m\u001b[0m\n\n      at constructor (node_modules/@babel/parser/src/parse-error.ts:95:45)\n      at Parser.toParseError [as raise] (node_modules/@babel/parser/src/tokenizer/index.ts:1504:19)\n      at Parser.raise [as semicolon] (node_modules/@babel/parser/src/parser/util.ts:149:10)\n      at Parser.semicolon [as parseVarStatement] (node_modules/@babel/parser/src/parser/statement.ts:1252:10)\n      at Parser.parseVarStatement [as parseStatementContent] (node_modules/@babel/parser/src/parser/statement.ts:612:21)\n      at Parser.parseStatementContent [as parseStatementLike] (node_modules/@babel/parser/src/parser/statement.ts:482:17)\n      at Parser.parseStatementLike [as parseStatementListItem] (node_modules/@babel/parser/src/parser/statement.ts:431:17)\n      at Parser.parseStatementListItem [as parseBlockOrModuleBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1444:16)\n      at Parser.parseBlockOrModuleBlockBody [as parseBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1417:10)\n      at Parser.parseBlockBody [as parseBlock] (node_modules/@babel/parser/src/parser/statement.ts:1385:10)\n      at Parser.parseBlock [as parseFunctionBody] (node_modules/@babel/parser/src/parser/expression.ts:2621:24)\n      at Parser.parseFunctionBody [as parseArrowExpression] (node_modules/@babel/parser/src/parser/expression.ts:2562:10)\n      at Parser.parseArrowExpression [as parseParenAndDistinguishExpression] (node_modules/@babel/parser/src/parser/expression.ts:1850:12)\n      at Parser.parseParenAndDistinguishExpression [as parseExprAtom] (node_modules/@babel/parser/src/parser/expression.ts:1170:21)\n      at Parser.parseExprAtom [as parseExprSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:742:23)\n      at Parser.parseExprSubscripts [as parseUpdate] (node_modules/@babel/parser/src/parser/expression.ts:721:21)\n      at Parser.parseUpdate [as parseMaybeUnary] (node_modules/@babel/parser/src/parser/expression.ts:683:23)\n      at Parser.parseMaybeUnary [as parseMaybeUnaryOrPrivate] (node_modules/@babel/parser/src/parser/expression.ts:417:14)\n      at Parser.parseMaybeUnaryOrPrivate [as parseExprOps] (node_modules/@babel/parser/src/parser/expression.ts:429:23)\n      at Parser.parseExprOps [as parseMaybeConditional] (node_modules/@babel/parser/src/parser/expression.ts:384:23)\n      at Parser.parseMaybeConditional [as parseMaybeAssign] (node_modules/@babel/parser/src/parser/expression.ts:301:21)\n      at parseMaybeAssign (node_modules/@babel/parser/src/parser/expression.ts:257:12)\n      at Parser.callback [as allowInAnd] (node_modules/@babel/parser/src/parser/expression.ts:3197:12)\n      at Parser.allowInAnd [as parseMaybeAssignAllowIn] (node_modules/@babel/parser/src/parser/expression.ts:256:17)\n      at Parser.parseMaybeAssignAllowIn [as parseMaybeAssignAllowInOrVoidPattern] (node_modules/@babel/parser/src/parser/expression.ts:3311:17)\n      at Parser.parseMaybeAssignAllowInOrVoidPattern [as parseExprListItem] (node_modules/@babel/parser/src/parser/expression.ts:2793:18)\n      at Parser.parseExprListItem [as parseCallExpressionArguments] (node_modules/@babel/parser/src/parser/expression.ts:1042:14)\n      at Parser.parseCallExpressionArguments [as parseCoverCallAndAsyncArrowHead] (node_modules/@babel/parser/src/parser/expression.ts:922:29)\n      at Parser.parseCoverCallAndAsyncArrowHead [as parseSubscript] (node_modules/@babel/parser/src/parser/expression.ts:804:19)\n      at Parser.parseSubscript [as parseSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:763:19)\n      at Parser.parseSubscripts [as parseExprSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:748:17)\n      at Parser.parseExprSubscripts [as parseUpdate] (node_modules/@babel/parser/src/parser/expression.ts:721:21)\n      at Parser.parseUpdate [as parseMaybeUnary] (node_modules/@babel/parser/src/parser/expression.ts:683:23)\n      at Parser.parseMaybeUnary [as parseMaybeUnaryOrPrivate] (node_modules/@babel/parser/src/parser/expression.ts:417:14)\n      at Parser.parseMaybeUnaryOrPrivate [as parseExprOps] (node_modules/@babel/parser/src/parser/expression.ts:429:23)\n      at Parser.parseExprOps [as parseMaybeConditional] (node_modules/@babel/parser/src/parser/expression.ts:384:23)\n      at Parser.parseMaybeConditional [as parseMaybeAssign] (node_modules/@babel/parser/src/parser/expression.ts:301:21)\n      at Parser.parseMaybeAssign [as parseExpressionBase] (node_modules/@babel/parser/src/parser/expression.ts:226:23)\n      at parseExpressionBase (node_modules/@babel/parser/src/parser/expression.ts:217:39)\n      at Parser.callback [as allowInAnd] (node_modules/@babel/parser/src/parser/expression.ts:3192:16)\n      at Parser.allowInAnd [as parseExpression] (node_modules/@babel/parser/src/parser/expression.ts:217:17)\n      at Parser.parseExpression [as parseStatementContent] (node_modules/@babel/parser/src/parser/statement.ts:688:23)\n      at Parser.parseStatementContent [as parseStatementLike] (node_modules/@babel/parser/src/parser/statement.ts:482:17)\n      at Parser.parseStatementLike [as parseModuleItem] (node_modules/@babel/parser/src/parser/statement.ts:419:17)\n      at Parser.parseModuleItem [as parseBlockOrModuleBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1443:16)\n      at Parser.parseBlockOrModuleBlockBody [as parseBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1417:10)\n      at Parser.parseBlockBody [as parseProgram] (node_modules/@babel/parser/src/parser/statement.ts:229:10)\n      at Parser.parseProgram [as parseTopLevel] (node_modules/@babel/parser/src/parser/statement.ts:203:25)\n      at Parser.parseTopLevel [as parse] (node_modules/@babel/parser/src/parser/index.ts:83:25)\n      at parse (node_modules/@babel/parser/src/index.ts:86:38)\n      at parser (node_modules/@babel/core/src/parser/index.ts:29:19)\n          at parser.next (<anonymous>)\n      at normalizeFile (node_modules/@babel/core/src/transformation/normalize-file.ts:50:24)\n          at normalizeFile.next (<anonymous>)\n      at run (node_modules/@babel/core/src/transformation/index.ts:41:36)\n          at run.next (<anonymous>)\n      at transform (node_modules/@babel/core/src/transform.ts:29:20)\n          at transform.next (<anonymous>)\n      at evaluateSync (node_modules/gensync/index.js:251:28)\n      at sync (node_modules/gensync/index.js:89:14)\n      at fn (node_modules/@babel/core/src/errors/rewrite-stack-trace.ts:99:14)\n      at transformSync (node_modules/@babel/core/src/transform.ts:66:52)\n      at ScriptTransformer.transformSource (node_modules/@jest/transform/build/ScriptTransformer.js:545:31)\n      at ScriptTransformer._transformAndBuildScript (node_modules/@jest/transform/build/ScriptTransformer.js:674:40)\n      at ScriptTransformer.transform (node_modules/@jest/transform/build/ScriptTransformer.js:726:19)",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "auth-flow.spec.ts",
+      "file": "tests/code-testing/system-integration/auth-flow.spec.ts",
+      "tests": [
+        {
+          "title": "\u25cf Test suite failed to run\n\n    Playwright Test needs to be invoked via 'npx playwright test' and excluded from Jest test runs.\n    Creating one directory for Playwright tests and one for Jest is the recommended way of doing it.\n    See https://playwright.dev/docs/intro for more information about Playwright Test.\n\n    \u001b[0m \u001b[90m 2 |\u001b[39m \u001b[36mimport\u001b[39m { test\u001b[33m,\u001b[39m expect } \u001b[36mfrom\u001b[39m \u001b[32m'@playwright/test'\u001b[39m\u001b[33m;\u001b[39m\n     \u001b[90m 3 |\u001b[39m\n    \u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 4 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Authentication Flow \u2014 API + Browser E2E'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n     \u001b[90m   |\u001b[39m      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n     \u001b[90m 5 |\u001b[39m   test(\u001b[32m'login via API returns session cookie and user data'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ request }) \u001b[33m=>\u001b[39m {\n     \u001b[90m 6 |\u001b[39m     \u001b[36mconst\u001b[39m response \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m request\u001b[33m.\u001b[39mpost(\u001b[32m'http://localhost:8000/api/v1/auth/login'\u001b[39m\u001b[33m,\u001b[39m {\n     \u001b[90m 7 |\u001b[39m       data\u001b[33m:\u001b[39m {\u001b[0m\n\n      at throwIfRunningInsideJest (node_modules/playwright/lib/common/testType.js:276:11)\n      at TestTypeImpl._describe (node_modules/playwright/lib/common/testType.js:114:5)\n      at Function.describe (node_modules/playwright/lib/transform/transform.js:275:12)\n      at Object.describe (code-testing/system-integration/auth-flow.spec.ts:4:6)",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "frontend-e2e-records.spec.ts",
+      "file": "tests/code-testing/system-integration/frontend-e2e-records.spec.ts",
+      "tests": [
+        {
+          "title": "\u25cf Test suite failed to run\n\n    Playwright Test needs to be invoked via 'npx playwright test' and excluded from Jest test runs.\n    Creating one directory for Playwright tests and one for Jest is the recommended way of doing it.\n    See https://playwright.dev/docs/intro for more information about Playwright Test.\n\n    \u001b[0m \u001b[90m 2 |\u001b[39m \u001b[36mimport\u001b[39m { test\u001b[33m,\u001b[39m expect } \u001b[36mfrom\u001b[39m \u001b[32m'@playwright/test'\u001b[39m\u001b[33m;\u001b[39m\n     \u001b[90m 3 |\u001b[39m\n    \u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 4 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Frontend E2E \u2014 Record Management'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n     \u001b[90m   |\u001b[39m      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n     \u001b[90m 5 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n     \u001b[90m 6 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'http://localhost:5173/login'\u001b[39m)\u001b[33m;\u001b[39m\n     \u001b[90m 7 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[type=\"email\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'user1@example.com'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\n      at throwIfRunningInsideJest (node_modules/playwright/lib/common/testType.js:276:11)\n      at TestTypeImpl._describe (node_modules/playwright/lib/common/testType.js:114:5)\n      at Function.describe (node_modules/playwright/lib/transform/transform.js:275:12)\n      at Object.describe (code-testing/system-integration/frontend-e2e-records.spec.ts:4:6)",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "title": "frontend-e2e-login.spec.ts",
+      "file": "tests/code-testing/system-integration/frontend-e2e-login.spec.ts",
+      "tests": [
+        {
+          "title": "\u25cf Test suite failed to run\n\n    Playwright Test needs to be invoked via 'npx playwright test' and excluded from Jest test runs.\n    Creating one directory for Playwright tests and one for Jest is the recommended way of doing it.\n    See https://playwright.dev/docs/intro for more information about Playwright Test.\n\n    \u001b[0m \u001b[90m 2 |\u001b[39m \u001b[36mimport\u001b[39m { test\u001b[33m,\u001b[39m expect } \u001b[36mfrom\u001b[39m \u001b[32m'@playwright/test'\u001b[39m\u001b[33m;\u001b[39m\n     \u001b[90m 3 |\u001b[39m\n    \u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 4 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Frontend E2E \u2014 Login Flow'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n     \u001b[90m   |\u001b[39m      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n     \u001b[90m 5 |\u001b[39m   test(\u001b[32m'user can log in and see dashboard'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n     \u001b[90m 6 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'http://localhost:5173/login'\u001b[39m)\u001b[33m;\u001b[39m\n     \u001b[90m 7 |\u001b[39m\u001b[0m\n\n      at throwIfRunningInsideJest (node_modules/playwright/lib/common/testType.js:276:11)\n      at TestTypeImpl._describe (node_modules/playwright/lib/common/testType.js:114:5)\n      at Function.describe (node_modules/playwright/lib/transform/transform.js:275:12)\n      at Object.describe (code-testing/system-integration/frontend-e2e-login.spec.ts:4:6)",
+          "status": "failed"
+        }
+      ]
+    }
+  ]
+}
