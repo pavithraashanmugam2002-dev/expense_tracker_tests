@@ -1,0 +1,851 @@
+{
+  "config": {
+    "configFile": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\playwright.config.ts",
+    "rootDir": "c:/Users/Krtrimaiq.ai/generated files/Expense Tracker Demo/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "c:/Users/Krtrimaiq.ai/generated files/Expense Tracker Demo/tests/test-results/dom-testing/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "c:/Users/Krtrimaiq.ai/generated files/Expense Tracker Demo/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "code-testing/**/*.spec.ts",
+          "code-testing/**/*.test.ts",
+          "dom-testing/**/*.spec.ts",
+          "dom-testing/**/*.test.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 6,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "dom-testing\\dashboard.spec.ts",
+      "file": "dom-testing/dashboard.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Dashboard Page",
+          "file": "dom-testing/dashboard.spec.ts",
+          "line": 12,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should display navigation bar with app title",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 60103,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:13:8",
+                        "location": {
+                          "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                          "column": 8,
+                          "line": 13
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Dashboard Page'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m login(page)\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/dashboard'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 16 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                            "column": 8,
+                            "line": 13
+                          },
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n  11 |\n  12 | test.describe('Dashboard Page', () => {\n> 13 |   test.beforeEach(async ({ page }) => {\n     |        ^\n  14 |     await login(page);\n  15 |     await page.goto('/dashboard');\n  16 |   });\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:13:8"
+                        },
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                            "column": 14,
+                            "line": 6
+                          },
+                          "message": "Error: page.fill: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input#emailId')\u001b[22m\n\n\n  4 | async function login(page: Page) {\n  5 |   await page.goto('/login');\n> 6 |   await page.fill('input#emailId', process.env.TEST_USER_EMAIL || 'alice@example.com');\n    |              ^\n  7 |   await page.fill('input#password', process.env.TEST_USER_PASSWORD || 'password123');\n  8 |   await page.click('button[type=\"submit\"]');\n  9 |   await page.waitForURL('/dashboard');\n    at login (c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:6:14)\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:14:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:22:20.844Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-ef4dc-vigation-bar-with-app-title-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-ef4dc-vigation-bar-with-app-title-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                        "column": 8,
+                        "line": 13
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5c6f62394ce1e13aa600-e372c0dd9cd18dae6623",
+              "file": "dom-testing/dashboard.spec.ts",
+              "line": 18,
+              "column": 3
+            },
+            {
+              "title": "should display logged-in user email",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 60105,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:13:8",
+                        "location": {
+                          "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                          "column": 8,
+                          "line": 13
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Dashboard Page'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m login(page)\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/dashboard'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 16 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                            "column": 8,
+                            "line": 13
+                          },
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n  11 |\n  12 | test.describe('Dashboard Page', () => {\n> 13 |   test.beforeEach(async ({ page }) => {\n     |        ^\n  14 |     await login(page);\n  15 |     await page.goto('/dashboard');\n  16 |   });\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:13:8"
+                        },
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                            "column": 14,
+                            "line": 6
+                          },
+                          "message": "Error: page.fill: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input#emailId')\u001b[22m\n\n\n  4 | async function login(page: Page) {\n  5 |   await page.goto('/login');\n> 6 |   await page.fill('input#emailId', process.env.TEST_USER_EMAIL || 'alice@example.com');\n    |              ^\n  7 |   await page.fill('input#password', process.env.TEST_USER_PASSWORD || 'password123');\n  8 |   await page.click('button[type=\"submit\"]');\n  9 |   await page.waitForURL('/dashboard');\n    at login (c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:6:14)\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:14:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:23:24.050Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-79ef9-isplay-logged-in-user-email-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-79ef9-isplay-logged-in-user-email-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                        "column": 8,
+                        "line": 13
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5c6f62394ce1e13aa600-f37c7d2ed345136843fd",
+              "file": "dom-testing/dashboard.spec.ts",
+              "line": 27,
+              "column": 3
+            },
+            {
+              "title": "should have correct navigation bar styling",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 60072,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:13:8",
+                        "location": {
+                          "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                          "column": 8,
+                          "line": 13
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Dashboard Page'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m login(page)\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/dashboard'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 16 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                            "column": 8,
+                            "line": 13
+                          },
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n  11 |\n  12 | test.describe('Dashboard Page', () => {\n> 13 |   test.beforeEach(async ({ page }) => {\n     |        ^\n  14 |     await login(page);\n  15 |     await page.goto('/dashboard');\n  16 |   });\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:13:8"
+                        },
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                            "column": 14,
+                            "line": 6
+                          },
+                          "message": "Error: page.fill: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input#emailId')\u001b[22m\n\n\n  4 | async function login(page: Page) {\n  5 |   await page.goto('/login');\n> 6 |   await page.fill('input#emailId', process.env.TEST_USER_EMAIL || 'alice@example.com');\n    |              ^\n  7 |   await page.fill('input#password', process.env.TEST_USER_PASSWORD || 'password123');\n  8 |   await page.click('button[type=\"submit\"]');\n  9 |   await page.waitForURL('/dashboard');\n    at login (c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:6:14)\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:14:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:24:25.500Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-833fc-rect-navigation-bar-styling-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-833fc-rect-navigation-bar-styling-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                        "column": 8,
+                        "line": 13
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5c6f62394ce1e13aa600-20eb83fc32f1fee13aa8",
+              "file": "dom-testing/dashboard.spec.ts",
+              "line": 33,
+              "column": 3
+            },
+            {
+              "title": "should display navigation content in flex layout",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 60065,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:13:8",
+                        "location": {
+                          "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                          "column": 8,
+                          "line": 13
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Dashboard Page'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m login(page)\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/dashboard'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 16 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                            "column": 8,
+                            "line": 13
+                          },
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n  11 |\n  12 | test.describe('Dashboard Page', () => {\n> 13 |   test.beforeEach(async ({ page }) => {\n     |        ^\n  14 |     await login(page);\n  15 |     await page.goto('/dashboard');\n  16 |   });\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:13:8"
+                        },
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                            "column": 14,
+                            "line": 6
+                          },
+                          "message": "Error: page.fill: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input#emailId')\u001b[22m\n\n\n  4 | async function login(page: Page) {\n  5 |   await page.goto('/login');\n> 6 |   await page.fill('input#emailId', process.env.TEST_USER_EMAIL || 'alice@example.com');\n    |              ^\n  7 |   await page.fill('input#password', process.env.TEST_USER_PASSWORD || 'password123');\n  8 |   await page.click('button[type=\"submit\"]');\n  9 |   await page.waitForURL('/dashboard');\n    at login (c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:6:14)\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:14:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:25:26.757Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-22490-tion-content-in-flex-layout-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-22490-tion-content-in-flex-layout-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                        "column": 8,
+                        "line": 13
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5c6f62394ce1e13aa600-6034bb52a6a0aeb7495f",
+              "file": "dom-testing/dashboard.spec.ts",
+              "line": 38,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dom-testing\\login.spec.ts",
+      "file": "dom-testing/login.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Login Page",
+          "file": "dom-testing/login.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should display login form with all elements",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1094,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:22:20.860Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee68263997bbc533fc92-3bb46a90fd70bb7c4020",
+              "file": "dom-testing/login.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "should display demo credentials",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 295,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:22:23.454Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee68263997bbc533fc92-29daeb11e4458fabf642",
+              "file": "dom-testing/login.spec.ts",
+              "line": 37,
+              "column": 3
+            },
+            {
+              "title": "should handle empty form submission",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 411,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:22:23.764Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee68263997bbc533fc92-c304f9c67fc6dac9d81a",
+              "file": "dom-testing/login.spec.ts",
+              "line": 47,
+              "column": 3
+            },
+            {
+              "title": "should handle invalid email format",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 381,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:22:24.189Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee68263997bbc533fc92-791c23848c9535de59d9",
+              "file": "dom-testing/login.spec.ts",
+              "line": 58,
+              "column": 3
+            },
+            {
+              "title": "should handle empty email with valid password",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 354,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:22:24.584Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee68263997bbc533fc92-375016e14b41b2a5e3d9",
+              "file": "dom-testing/login.spec.ts",
+              "line": 74,
+              "column": 3
+            },
+            {
+              "title": "should handle valid email with empty password",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 332,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:22:24.954Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee68263997bbc533fc92-a9aa61ba5cbef64a3e9b",
+              "file": "dom-testing/login.spec.ts",
+              "line": 88,
+              "column": 3
+            },
+            {
+              "title": "should fill email and password fields",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 286,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:22:25.299Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee68263997bbc533fc92-5c5df1e803f62804924b",
+              "file": "dom-testing/login.spec.ts",
+              "line": 102,
+              "column": 3
+            },
+            {
+              "title": "should attempt login with demo credentials - user1",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 349,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:22:25.598Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee68263997bbc533fc92-71c267d27bd5e0bd4f4c",
+              "file": "dom-testing/login.spec.ts",
+              "line": 115,
+              "column": 3
+            },
+            {
+              "title": "should attempt login with demo credentials - user2",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 346,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:22:25.962Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee68263997bbc533fc92-5a5d90e54a084394a77b",
+              "file": "dom-testing/login.spec.ts",
+              "line": 131,
+              "column": 3
+            },
+            {
+              "title": "should attempt login with demo credentials - user3",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 327,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:22:26.322Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee68263997bbc533fc92-45a5ca3ad4849673e3d4",
+              "file": "dom-testing/login.spec.ts",
+              "line": 144,
+              "column": 3
+            },
+            {
+              "title": "should have proper form attributes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 266,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:22:26.665Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee68263997bbc533fc92-76ad757fbb81c6750dae",
+              "file": "dom-testing/login.spec.ts",
+              "line": 157,
+              "column": 3
+            },
+            {
+              "title": "should have accessible labels",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 255,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:22:26.944Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee68263997bbc533fc92-f70cbc4c4da45e76c579",
+              "file": "dom-testing/login.spec.ts",
+              "line": 170,
+              "column": 3
+            },
+            {
+              "title": "should maintain password visibility security",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 270,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-24T08:22:27.211Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ee68263997bbc533fc92-e28cb2b404fa844f05ea",
+              "file": "dom-testing/login.spec.ts",
+              "line": 179,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-04-24T08:22:19.695Z",
+    "duration": 247355.503,
+    "expected": 13,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

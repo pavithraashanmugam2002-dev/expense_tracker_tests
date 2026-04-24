@@ -1,0 +1,244 @@
+{
+  "passed": 13,
+  "failed": 4,
+  "skipped": 0,
+  "total": 17,
+  "pass_rate": 76.47058823529412,
+  "results": [
+    {
+      "file": "dom-testing/dashboard.spec.ts",
+      "title": "should display navigation bar with app title",
+      "status": "failed",
+      "duration": 60103,
+      "error": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m"
+    },
+    {
+      "file": "dom-testing/dashboard.spec.ts",
+      "title": "should display logged-in user email",
+      "status": "failed",
+      "duration": 60105,
+      "error": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m"
+    },
+    {
+      "file": "dom-testing/dashboard.spec.ts",
+      "title": "should have correct navigation bar styling",
+      "status": "failed",
+      "duration": 60072,
+      "error": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m"
+    },
+    {
+      "file": "dom-testing/dashboard.spec.ts",
+      "title": "should display navigation content in flex layout",
+      "status": "failed",
+      "duration": 60065,
+      "error": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m"
+    },
+    {
+      "file": "dom-testing/login.spec.ts",
+      "title": "should display login form with all elements",
+      "status": "passed",
+      "duration": 1094,
+      "error": ""
+    },
+    {
+      "file": "dom-testing/login.spec.ts",
+      "title": "should display demo credentials",
+      "status": "passed",
+      "duration": 295,
+      "error": ""
+    },
+    {
+      "file": "dom-testing/login.spec.ts",
+      "title": "should handle empty form submission",
+      "status": "passed",
+      "duration": 411,
+      "error": ""
+    },
+    {
+      "file": "dom-testing/login.spec.ts",
+      "title": "should handle invalid email format",
+      "status": "passed",
+      "duration": 381,
+      "error": ""
+    },
+    {
+      "file": "dom-testing/login.spec.ts",
+      "title": "should handle empty email with valid password",
+      "status": "passed",
+      "duration": 354,
+      "error": ""
+    },
+    {
+      "file": "dom-testing/login.spec.ts",
+      "title": "should handle valid email with empty password",
+      "status": "passed",
+      "duration": 332,
+      "error": ""
+    },
+    {
+      "file": "dom-testing/login.spec.ts",
+      "title": "should fill email and password fields",
+      "status": "passed",
+      "duration": 286,
+      "error": ""
+    },
+    {
+      "file": "dom-testing/login.spec.ts",
+      "title": "should attempt login with demo credentials - user1",
+      "status": "passed",
+      "duration": 349,
+      "error": ""
+    },
+    {
+      "file": "dom-testing/login.spec.ts",
+      "title": "should attempt login with demo credentials - user2",
+      "status": "passed",
+      "duration": 346,
+      "error": ""
+    },
+    {
+      "file": "dom-testing/login.spec.ts",
+      "title": "should attempt login with demo credentials - user3",
+      "status": "passed",
+      "duration": 327,
+      "error": ""
+    },
+    {
+      "file": "dom-testing/login.spec.ts",
+      "title": "should have proper form attributes",
+      "status": "passed",
+      "duration": 266,
+      "error": ""
+    },
+    {
+      "file": "dom-testing/login.spec.ts",
+      "title": "should have accessible labels",
+      "status": "passed",
+      "duration": 255,
+      "error": ""
+    },
+    {
+      "file": "dom-testing/login.spec.ts",
+      "title": "should maintain password visibility security",
+      "status": "passed",
+      "duration": 270,
+      "error": ""
+    }
+  ],
+  "suites": [
+    {
+      "title": "dashboard.spec.ts",
+      "file": "dom-testing/dashboard.spec.ts",
+      "tests": [
+        {
+          "title": "should display navigation bar with app title",
+          "status": "failed",
+          "duration": 60103,
+          "error": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m"
+        },
+        {
+          "title": "should display logged-in user email",
+          "status": "failed",
+          "duration": 60105,
+          "error": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m"
+        },
+        {
+          "title": "should have correct navigation bar styling",
+          "status": "failed",
+          "duration": 60072,
+          "error": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m"
+        },
+        {
+          "title": "should display navigation content in flex layout",
+          "status": "failed",
+          "duration": 60065,
+          "error": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m"
+        }
+      ]
+    },
+    {
+      "title": "login.spec.ts",
+      "file": "dom-testing/login.spec.ts",
+      "tests": [
+        {
+          "title": "should display login form with all elements",
+          "status": "passed",
+          "duration": 1094,
+          "error": ""
+        },
+        {
+          "title": "should display demo credentials",
+          "status": "passed",
+          "duration": 295,
+          "error": ""
+        },
+        {
+          "title": "should handle empty form submission",
+          "status": "passed",
+          "duration": 411,
+          "error": ""
+        },
+        {
+          "title": "should handle invalid email format",
+          "status": "passed",
+          "duration": 381,
+          "error": ""
+        },
+        {
+          "title": "should handle empty email with valid password",
+          "status": "passed",
+          "duration": 354,
+          "error": ""
+        },
+        {
+          "title": "should handle valid email with empty password",
+          "status": "passed",
+          "duration": 332,
+          "error": ""
+        },
+        {
+          "title": "should fill email and password fields",
+          "status": "passed",
+          "duration": 286,
+          "error": ""
+        },
+        {
+          "title": "should attempt login with demo credentials - user1",
+          "status": "passed",
+          "duration": 349,
+          "error": ""
+        },
+        {
+          "title": "should attempt login with demo credentials - user2",
+          "status": "passed",
+          "duration": 346,
+          "error": ""
+        },
+        {
+          "title": "should attempt login with demo credentials - user3",
+          "status": "passed",
+          "duration": 327,
+          "error": ""
+        },
+        {
+          "title": "should have proper form attributes",
+          "status": "passed",
+          "duration": 266,
+          "error": ""
+        },
+        {
+          "title": "should have accessible labels",
+          "status": "passed",
+          "duration": 255,
+          "error": ""
+        },
+        {
+          "title": "should maintain password visibility security",
+          "status": "passed",
+          "duration": 270,
+          "error": ""
+        }
+      ]
+    }
+  ]
+}
