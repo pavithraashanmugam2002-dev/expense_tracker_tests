@@ -6,22 +6,22 @@
 
 # Test info
 
-- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> should have correct navigation bar styling
-- Location: dom-testing\dashboard.spec.ts:26:3
+- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> should display user email in navigation
+- Location: dom-testing\dashboard.spec.ts:19:3
 
 # Error details
 
 ```
-Error: expect(locator).toHaveCSS(expected) failed
+Error: expect(locator).toBeVisible() failed
 
-Locator: locator('nav')
-Expected: "rgb(44, 62, 80)"
+Locator: locator('span').filter({ hasText: 'user1@example.com' })
+Expected: visible
 Timeout: 10000ms
 Error: element(s) not found
 
 Call log:
-  - Expect "toHaveCSS" with timeout 10000ms
-  - waiting for locator('nav')
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('span').filter({ hasText: 'user1@example.com' })
 
 ```
 
@@ -70,7 +70,8 @@ Call log:
   19  |   test('should display user email in navigation', async ({ page }) => {
   20  |     // Check if user email is displayed
   21  |     const userEmail = page.locator('span', { hasText: 'user1@example.com' });
-  22  |     await expect(userEmail).toBeVisible();
+> 22  |     await expect(userEmail).toBeVisible();
+      |                             ^ Error: expect(locator).toBeVisible() failed
   23  |     await expect(userEmail).toHaveCSS('color', 'rgb(236, 240, 241)');
   24  |   });
   25  | 
@@ -78,8 +79,7 @@ Call log:
   27  |     const nav = page.locator('nav');
   28  |     
   29  |     // Verify navigation bar background color
-> 30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
-      |                       ^ Error: expect(locator).toHaveCSS(expected) failed
+  30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
   31  |     
   32  |     // Verify padding
   33  |     await expect(nav).toHaveCSS('padding', '16px 32px');

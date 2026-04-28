@@ -5,184 +5,144 @@ test.describe('Login Page', () => {
     await page.goto('/login');
   });
 
-  test('should display login form with all elements', async ({ page }) => {
+  test('should display login page elements', async ({ page }) => {
     // Check page title
     await expect(page.locator('h1')).toContainText('💰 Expense Tracker');
     
     // Check subtitle
     await expect(page.locator('p').first()).toContainText('Sign in to manage your finances');
     
-    // Check email field
-    const emailLabel = page.locator('label').filter({ hasText: 'Email' });
-    await expect(emailLabel).toBeVisible();
+    // Check form fields
+    await expect(page.locator('label').filter({ hasText: 'Email' })).toBeVisible();
+    await expect(page.locator('input[type="email"]')).toBeVisible();
+    await expect(page.locator('input[type="email"]')).toHaveAttribute('placeholder', 'user1@example.com');
     
-    const emailInput = page.locator('input[type="email"]');
-    await expect(emailInput).toBeVisible();
-    await expect(emailInput).toHaveAttribute('placeholder', 'user1@example.com');
-    
-    // Check password field
-    const passwordLabel = page.locator('label').filter({ hasText: 'Password' });
-    await expect(passwordLabel).toBeVisible();
-    
-    const passwordInput = page.locator('input[type="password"]');
-    await expect(passwordInput).toBeVisible();
-    await expect(passwordInput).toHaveAttribute('placeholder', 'Enter your password');
+    await expect(page.locator('label').filter({ hasText: 'Password' })).toBeVisible();
+    await expect(page.locator('input[type="password"]')).toBeVisible();
+    await expect(page.locator('input[type="password"]')).toHaveAttribute('placeholder', 'Enter your password');
     
     // Check submit button
-    const submitButton = page.locator('button[type="submit"]');
-    await expect(submitButton).toBeVisible();
-    await expect(submitButton).toContainText('Sign In');
-  });
-
-  test('should display demo credentials', async ({ page }) => {
+    await expect(page.locator('button[type="submit"]')).toContainText('Sign In');
+    
     // Check demo credentials section
-    await expect(page.locator('p').filter({ hasText: 'Demo Credentials:' })).toBeVisible();
-    
-    // Check all three demo credentials
-    await expect(page.locator('p').filter({ hasText: 'user1@example.com / password123' })).toBeVisible();
-    await expect(page.locator('p').filter({ hasText: 'user2@example.com / password123' })).toBeVisible();
-    await expect(page.locator('p').filter({ hasText: 'user3@example.com / password123' })).toBeVisible();
+    await expect(page.locator('text=Demo Credentials:')).toBeVisible();
+    await expect(page.locator('text=user1@example.com / password123')).toBeVisible();
+    await expect(page.locator('text=user2@example.com / password123')).toBeVisible();
+    await expect(page.locator('text=user3@example.com / password123')).toBeVisible();
   });
 
-  test('should handle empty form submission', async ({ page }) => {
-    const submitButton = page.locator('button[type="submit"]');
+  test('should submit form with empty fields', async ({ page }) => {
+    // Click submit without filling fields
+    await page.locator('button[type="submit"]').click();
     
-    // Try to submit empty form
-    await submitButton.click();
-    
-    // Browser's built-in validation should prevent submission
-    // Check that we're still on the login page
-    await expect(page.locator('h1')).toContainText('💰 Expense Tracker');
-  });
-
-  test('should handle invalid email format', async ({ page }) => {
-    const emailInput = page.locator('input[type="email"]');
-    const passwordInput = page.locator('input[type="password"]');
-    const submitButton = page.locator('button[type="submit"]');
-    
-    // Enter invalid email
-    await emailInput.fill('invalid-email');
-    await passwordInput.fill('password123');
-    
-    // Try to submit
-    await submitButton.click();
-    
-    // Browser's built-in validation should prevent submission
-    await expect(page.locator('h1')).toContainText('💰 Expense Tracker');
-  });
-
-  test('should handle empty email with valid password', async ({ page }) => {
-    const passwordInput = page.locator('input[type="password"]');
-    const submitButton = page.locator('button[type="submit"]');
-    
-    // Enter only password
-    await passwordInput.fill('password123');
-    
-    // Try to submit
-    await submitButton.click();
-    
-    // Should still be on login page
-    await expect(page.locator('h1')).toContainText('💰 Expense Tracker');
-  });
-
-  test('should handle valid email with empty password', async ({ page }) => {
-    const emailInput = page.locator('input[type="email"]');
-    const submitButton = page.locator('button[type="submit"]');
-    
-    // Enter only email
-    await emailInput.fill('user1@example.com');
-    
-    // Try to submit
-    await submitButton.click();
-    
-    // Should still be on login page
-    await expect(page.locator('h1')).toContainText('💰 Expense Tracker');
-  });
-
-  test('should fill email and password fields', async ({ page }) => {
+    // Browser should show validation errors for required fields
     const emailInput = page.locator('input[type="email"]');
     const passwordInput = page.locator('input[type="password"]');
     
-    // Fill in the form
-    await emailInput.fill('user1@example.com');
-    await passwordInput.fill('password123');
-    
-    // Verify values are filled
-    await expect(emailInput).toHaveValue('user1@example.com');
-    await expect(passwordInput).toHaveValue('password123');
-  });
-
-  test('should attempt login with demo credentials - user1', async ({ page }) => {
-    const emailInput = page.locator('input[type="email"]');
-    const passwordInput = page.locator('input[type="password"]');
-    const submitButton = page.locator('button[type="submit"]');
-    
-    // Use first demo credentials
-    await emailInput.fill('user1@example.com');
-    await passwordInput.fill('password123');
-    
-    // Submit form
-    await submitButton.click();
-    
-    // Wait for navigation or response (this will depend on actual backend behavior)
-    // Since we don't know the exact success behavior, we just verify the form submission
-  });
-
-  test('should attempt login with demo credentials - user2', async ({ page }) => {
-    const emailInput = page.locator('input[type="email"]');
-    const passwordInput = page.locator('input[type="password"]');
-    const submitButton = page.locator('button[type="submit"]');
-    
-    // Use second demo credentials
-    await emailInput.fill('user2@example.com');
-    await passwordInput.fill('password123');
-    
-    // Submit form
-    await submitButton.click();
-  });
-
-  test('should attempt login with demo credentials - user3', async ({ page }) => {
-    const emailInput = page.locator('input[type="email"]');
-    const passwordInput = page.locator('input[type="password"]');
-    const submitButton = page.locator('button[type="submit"]');
-    
-    // Use third demo credentials
-    await emailInput.fill('user3@example.com');
-    await passwordInput.fill('password123');
-    
-    // Submit form
-    await submitButton.click();
-  });
-
-  test('should have proper form attributes', async ({ page }) => {
-    const emailInput = page.locator('input[type="email"]');
-    const passwordInput = page.locator('input[type="password"]');
-    
-    // Check required attributes
+    // Check if inputs have required attribute
     await expect(emailInput).toHaveAttribute('required', '');
     await expect(passwordInput).toHaveAttribute('required', '');
-    
-    // Check input types
-    await expect(emailInput).toHaveAttribute('type', 'email');
-    await expect(passwordInput).toHaveAttribute('type', 'password');
   });
 
-  test('should have accessible labels', async ({ page }) => {
-    // Check that labels are properly associated with inputs
-    const emailLabel = page.locator('label').filter({ hasText: 'Email' });
-    const passwordLabel = page.locator('label').filter({ hasText: 'Password' });
+  test('should submit form with invalid email', async ({ page }) => {
+    // Fill with invalid email
+    await page.locator('input[type="email"]').fill('invalid-email');
+    await page.locator('input[type="password"]').fill('password123');
     
-    await expect(emailLabel).toBeVisible();
-    await expect(passwordLabel).toBeVisible();
+    // Try to submit
+    await page.locator('button[type="submit"]').click();
+    
+    // Browser validation should prevent submission
+    const emailInput = page.locator('input[type="email"]');
+    const isInvalid = await emailInput.evaluate((el: HTMLInputElement) => !el.validity.valid);
+    expect(isInvalid).toBe(true);
   });
 
-  test('should maintain password visibility security', async ({ page }) => {
+  test('should submit form with valid demo credentials - user1', async ({ page }) => {
+    // Fill with demo credentials
+    await page.locator('input[type="email"]').fill('user1@example.com');
+    await page.locator('input[type="password"]').fill('password123');
+    
+    // Submit form
+    await page.locator('button[type="submit"]').click();
+    
+    // Wait for potential navigation or response
+    await page.waitForTimeout(500);
+  });
+
+  test('should submit form with valid demo credentials - user2', async ({ page }) => {
+    // Fill with demo credentials
+    await page.locator('input[type="email"]').fill('user2@example.com');
+    await page.locator('input[type="password"]').fill('password123');
+    
+    // Submit form
+    await page.locator('button[type="submit"]').click();
+    
+    // Wait for potential navigation or response
+    await page.waitForTimeout(500);
+  });
+
+  test('should submit form with valid demo credentials - user3', async ({ page }) => {
+    // Fill with demo credentials
+    await page.locator('input[type="email"]').fill('user3@example.com');
+    await page.locator('input[type="password"]').fill('password123');
+    
+    // Submit form
+    await page.locator('button[type="submit"]').click();
+    
+    // Wait for potential navigation or response
+    await page.waitForTimeout(500);
+  });
+
+  test('should submit form with environment credentials', async ({ page }) => {
+    // Use credentials from .env.test file
+    const email = process.env.TEST_USER_EMAIL || 'user1@example.com';
+    const password = process.env.TEST_USER_PASSWORD || 'password123';
+    
+    await page.locator('input[type="email"]').fill(email);
+    await page.locator('input[type="password"]').fill(password);
+    
+    // Submit form
+    await page.locator('button[type="submit"]').click();
+    
+    // Wait for potential navigation or response
+    await page.waitForTimeout(500);
+  });
+
+  test('should have proper input field styling', async ({ page }) => {
+    const emailInput = page.locator('input[type="email"]');
     const passwordInput = page.locator('input[type="password"]');
     
-    // Fill password
-    await passwordInput.fill('secretpassword');
+    // Check inputs have proper styling attributes
+    await expect(emailInput).toHaveCSS('width', '100%');
+    await expect(passwordInput).toHaveCSS('width', '100%');
+  });
+
+  test('should have submit button with proper styling', async ({ page }) => {
+    const submitButton = page.locator('button[type="submit"]');
     
-    // Verify it's still type password (masked)
-    await expect(passwordInput).toHaveAttribute('type', 'password');
+    await expect(submitButton).toHaveCSS('width', '100%');
+    await expect(submitButton).toHaveCSS('background-color', 'rgb(52, 152, 219)');
+    await expect(submitButton).toHaveCSS('color', 'rgb(255, 255, 255)');
+  });
+
+  test('should clear input values when typing', async ({ page }) => {
+    // Fill email
+    await page.locator('input[type="email"]').fill('test@example.com');
+    await expect(page.locator('input[type="email"]')).toHaveValue('test@example.com');
+    
+    // Clear and type new value
+    await page.locator('input[type="email"]').clear();
+    await page.locator('input[type="email"]').fill('new@example.com');
+    await expect(page.locator('input[type="email"]')).toHaveValue('new@example.com');
+    
+    // Fill password
+    await page.locator('input[type="password"]').fill('password123');
+    await expect(page.locator('input[type="password"]')).toHaveValue('password123');
+    
+    // Clear and type new value
+    await page.locator('input[type="password"]').clear();
+    await page.locator('input[type="password"]').fill('newpassword');
+    await expect(page.locator('input[type="password"]')).toHaveValue('newpassword');
   });
 });

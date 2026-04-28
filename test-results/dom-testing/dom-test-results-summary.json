@@ -1,127 +1,162 @@
 {
-  "passed": 13,
-  "failed": 4,
+  "passed": 9,
+  "failed": 13,
   "skipped": 0,
-  "total": 17,
-  "pass_rate": 76.47058823529412,
+  "total": 22,
+  "pass_rate": 40.909090909090914,
   "results": [
     {
       "file": "dom-testing/dashboard.spec.ts",
-      "title": "should display navigation bar with app title",
+      "title": "should display navigation bar with application name",
       "status": "failed",
-      "duration": 60103,
-      "error": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m"
+      "duration": 10731,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav')\u001b[22m\n"
     },
     {
       "file": "dom-testing/dashboard.spec.ts",
-      "title": "should display logged-in user email",
+      "title": "should display user email in navigation",
       "status": "failed",
-      "duration": 60105,
-      "error": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m"
+      "duration": 10238,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('span').filter({ hasText: 'user1@example.com' })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('span').filter({ hasText: 'user1@example.com' })\u001b[22m\n"
     },
     {
       "file": "dom-testing/dashboard.spec.ts",
       "title": "should have correct navigation bar styling",
       "status": "failed",
-      "duration": 60072,
-      "error": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m"
+      "duration": 10279,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav')\nExpected: \u001b[32m\"rgb(44, 62, 80)\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav')\u001b[22m\n"
     },
     {
       "file": "dom-testing/dashboard.spec.ts",
-      "title": "should display navigation content in flex layout",
+      "title": "should display navigation items aligned correctly",
       "status": "failed",
-      "duration": 60065,
-      "error": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m"
+      "duration": 10246,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav > div').first()\nExpected: \u001b[32m\"flex\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav > div').first()\u001b[22m\n"
+    },
+    {
+      "file": "dom-testing/dashboard.spec.ts",
+      "title": "should display user info section with correct layout",
+      "status": "failed",
+      "duration": 351,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div').filter({ hasText: 'user1@example.com' }).locator('..')\nExpected: \u001b[32m\"flex\"\u001b[39m\nError: strict mode violation: locator('div').filter({ hasText: 'user1@example.com' }).locator('..') resolved to 4 elements:\n    1) <body>\u2026</body> aka locator('body')\n    2) <div id=\"root\">\u2026</div> aka locator('#root')\n    3) <div>\u2026</div> aka locator('div').nth(1)\n    4) <div>\u2026</div> aka getByText('\ud83d\udcb0 Expense TrackerSign in to')\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('div').filter({ hasText: 'user1@example.com' }).locator('..')\u001b[22m\n"
+    },
+    {
+      "file": "dom-testing/dashboard.spec.ts",
+      "title": "should have correct page background color",
+      "status": "failed",
+      "duration": 10302,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#root > div').first()\nExpected: \u001b[32m\"100vh\"\u001b[39m\nReceived: \u001b[31m\"720px\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#root > div').first()\u001b[22m\n\u001b[2m    14 \u00d7 locator resolved to <div>\u2026</div>\u001b[22m\n\u001b[2m       - unexpected value \"720px\"\u001b[22m\n"
+    },
+    {
+      "file": "dom-testing/dashboard.spec.ts",
+      "title": "should apply global styles correctly",
+      "status": "passed",
+      "duration": 344,
+      "error": ""
+    },
+    {
+      "file": "dom-testing/dashboard.spec.ts",
+      "title": "should have responsive navigation layout",
+      "status": "failed",
+      "duration": 10198,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav')\u001b[22m\n"
+    },
+    {
+      "file": "dom-testing/dashboard.spec.ts",
+      "title": "navigation bar should have shadow effect",
+      "status": "failed",
+      "duration": 60069,
+      "error": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+    },
+    {
+      "file": "dom-testing/dashboard.spec.ts",
+      "title": "should display complete page structure",
+      "status": "failed",
+      "duration": 10339,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#root nav')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#root nav')\u001b[22m\n"
+    },
+    {
+      "file": "dom-testing/dashboard.spec.ts",
+      "title": "h1 element should have correct font size",
+      "status": "failed",
+      "duration": 10288,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h1').filter({ hasText: '\ud83d\udcb0 Application' })\nExpected: \u001b[32m\"24px\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('h1').filter({ hasText: '\ud83d\udcb0 Application' })\u001b[22m\n"
+    },
+    {
+      "file": "dom-testing/dashboard.spec.ts",
+      "title": "user email should have correct font size",
+      "status": "failed",
+      "duration": 10242,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('span').filter({ hasText: 'user1@example.com' })\nExpected: \u001b[32m\"14.4px\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('span').filter({ hasText: 'user1@example.com' })\u001b[22m\n"
     },
     {
       "file": "dom-testing/login.spec.ts",
-      "title": "should display login form with all elements",
+      "title": "should display login page elements",
       "status": "passed",
-      "duration": 1094,
+      "duration": 868,
       "error": ""
     },
     {
       "file": "dom-testing/login.spec.ts",
-      "title": "should display demo credentials",
+      "title": "should submit form with empty fields",
       "status": "passed",
-      "duration": 295,
+      "duration": 348,
       "error": ""
     },
     {
       "file": "dom-testing/login.spec.ts",
-      "title": "should handle empty form submission",
+      "title": "should submit form with invalid email",
       "status": "passed",
-      "duration": 411,
+      "duration": 374,
       "error": ""
     },
     {
       "file": "dom-testing/login.spec.ts",
-      "title": "should handle invalid email format",
+      "title": "should submit form with valid demo credentials - user1",
       "status": "passed",
-      "duration": 381,
+      "duration": 831,
       "error": ""
     },
     {
       "file": "dom-testing/login.spec.ts",
-      "title": "should handle empty email with valid password",
+      "title": "should submit form with valid demo credentials - user2",
       "status": "passed",
-      "duration": 354,
+      "duration": 803,
       "error": ""
     },
     {
       "file": "dom-testing/login.spec.ts",
-      "title": "should handle valid email with empty password",
+      "title": "should submit form with valid demo credentials - user3",
       "status": "passed",
-      "duration": 332,
+      "duration": 798,
       "error": ""
     },
     {
       "file": "dom-testing/login.spec.ts",
-      "title": "should fill email and password fields",
+      "title": "should submit form with environment credentials",
       "status": "passed",
-      "duration": 286,
+      "duration": 839,
       "error": ""
     },
     {
       "file": "dom-testing/login.spec.ts",
-      "title": "should attempt login with demo credentials - user1",
-      "status": "passed",
-      "duration": 349,
-      "error": ""
+      "title": "should have proper input field styling",
+      "status": "failed",
+      "duration": 10231,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('input[type=\"email\"]')\nExpected: \u001b[32m\"100%\"\u001b[39m\nReceived: \u001b[31m\"304px\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n\u001b[2m    13 \u00d7 locator resolved to <input value=\"\" required=\"\" type=\"email\" placeholder=\"user1@example.com\"/>\u001b[22m\n\u001b[2m       - unexpected value \"304px\"\u001b[22m\n"
     },
     {
       "file": "dom-testing/login.spec.ts",
-      "title": "should attempt login with demo credentials - user2",
-      "status": "passed",
-      "duration": 346,
-      "error": ""
+      "title": "should have submit button with proper styling",
+      "status": "failed",
+      "duration": 10240,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('button[type=\"submit\"]')\nExpected: \u001b[32m\"100%\"\u001b[39m\nReceived: \u001b[31m\"304px\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('button[type=\"submit\"]')\u001b[22m\n\u001b[2m    13 \u00d7 locator resolved to <button type=\"submit\">Sign In</button>\u001b[22m\n\u001b[2m       - unexpected value \"304px\"\u001b[22m\n"
     },
     {
       "file": "dom-testing/login.spec.ts",
-      "title": "should attempt login with demo credentials - user3",
+      "title": "should clear input values when typing",
       "status": "passed",
-      "duration": 327,
-      "error": ""
-    },
-    {
-      "file": "dom-testing/login.spec.ts",
-      "title": "should have proper form attributes",
-      "status": "passed",
-      "duration": 266,
-      "error": ""
-    },
-    {
-      "file": "dom-testing/login.spec.ts",
-      "title": "should have accessible labels",
-      "status": "passed",
-      "duration": 255,
-      "error": ""
-    },
-    {
-      "file": "dom-testing/login.spec.ts",
-      "title": "should maintain password visibility security",
-      "status": "passed",
-      "duration": 270,
+      "duration": 383,
       "error": ""
     }
   ],
@@ -131,28 +166,76 @@
       "file": "dom-testing/dashboard.spec.ts",
       "tests": [
         {
-          "title": "should display navigation bar with app title",
+          "title": "should display navigation bar with application name",
           "status": "failed",
-          "duration": 60103,
-          "error": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m"
+          "duration": 10731,
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav')\u001b[22m\n"
         },
         {
-          "title": "should display logged-in user email",
+          "title": "should display user email in navigation",
           "status": "failed",
-          "duration": 60105,
-          "error": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m"
+          "duration": 10238,
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('span').filter({ hasText: 'user1@example.com' })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('span').filter({ hasText: 'user1@example.com' })\u001b[22m\n"
         },
         {
           "title": "should have correct navigation bar styling",
           "status": "failed",
-          "duration": 60072,
-          "error": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m"
+          "duration": 10279,
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav')\nExpected: \u001b[32m\"rgb(44, 62, 80)\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav')\u001b[22m\n"
         },
         {
-          "title": "should display navigation content in flex layout",
+          "title": "should display navigation items aligned correctly",
           "status": "failed",
-          "duration": 60065,
-          "error": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m"
+          "duration": 10246,
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav > div').first()\nExpected: \u001b[32m\"flex\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav > div').first()\u001b[22m\n"
+        },
+        {
+          "title": "should display user info section with correct layout",
+          "status": "failed",
+          "duration": 351,
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div').filter({ hasText: 'user1@example.com' }).locator('..')\nExpected: \u001b[32m\"flex\"\u001b[39m\nError: strict mode violation: locator('div').filter({ hasText: 'user1@example.com' }).locator('..') resolved to 4 elements:\n    1) <body>\u2026</body> aka locator('body')\n    2) <div id=\"root\">\u2026</div> aka locator('#root')\n    3) <div>\u2026</div> aka locator('div').nth(1)\n    4) <div>\u2026</div> aka getByText('\ud83d\udcb0 Expense TrackerSign in to')\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('div').filter({ hasText: 'user1@example.com' }).locator('..')\u001b[22m\n"
+        },
+        {
+          "title": "should have correct page background color",
+          "status": "failed",
+          "duration": 10302,
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#root > div').first()\nExpected: \u001b[32m\"100vh\"\u001b[39m\nReceived: \u001b[31m\"720px\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#root > div').first()\u001b[22m\n\u001b[2m    14 \u00d7 locator resolved to <div>\u2026</div>\u001b[22m\n\u001b[2m       - unexpected value \"720px\"\u001b[22m\n"
+        },
+        {
+          "title": "should apply global styles correctly",
+          "status": "passed",
+          "duration": 344,
+          "error": ""
+        },
+        {
+          "title": "should have responsive navigation layout",
+          "status": "failed",
+          "duration": 10198,
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav')\u001b[22m\n"
+        },
+        {
+          "title": "navigation bar should have shadow effect",
+          "status": "failed",
+          "duration": 60069,
+          "error": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+        },
+        {
+          "title": "should display complete page structure",
+          "status": "failed",
+          "duration": 10339,
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#root nav')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#root nav')\u001b[22m\n"
+        },
+        {
+          "title": "h1 element should have correct font size",
+          "status": "failed",
+          "duration": 10288,
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h1').filter({ hasText: '\ud83d\udcb0 Application' })\nExpected: \u001b[32m\"24px\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('h1').filter({ hasText: '\ud83d\udcb0 Application' })\u001b[22m\n"
+        },
+        {
+          "title": "user email should have correct font size",
+          "status": "failed",
+          "duration": 10242,
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('span').filter({ hasText: 'user1@example.com' })\nExpected: \u001b[32m\"14.4px\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('span').filter({ hasText: 'user1@example.com' })\u001b[22m\n"
         }
       ]
     },
@@ -161,81 +244,63 @@
       "file": "dom-testing/login.spec.ts",
       "tests": [
         {
-          "title": "should display login form with all elements",
+          "title": "should display login page elements",
           "status": "passed",
-          "duration": 1094,
+          "duration": 868,
           "error": ""
         },
         {
-          "title": "should display demo credentials",
+          "title": "should submit form with empty fields",
           "status": "passed",
-          "duration": 295,
+          "duration": 348,
           "error": ""
         },
         {
-          "title": "should handle empty form submission",
+          "title": "should submit form with invalid email",
           "status": "passed",
-          "duration": 411,
+          "duration": 374,
           "error": ""
         },
         {
-          "title": "should handle invalid email format",
+          "title": "should submit form with valid demo credentials - user1",
           "status": "passed",
-          "duration": 381,
+          "duration": 831,
           "error": ""
         },
         {
-          "title": "should handle empty email with valid password",
+          "title": "should submit form with valid demo credentials - user2",
           "status": "passed",
-          "duration": 354,
+          "duration": 803,
           "error": ""
         },
         {
-          "title": "should handle valid email with empty password",
+          "title": "should submit form with valid demo credentials - user3",
           "status": "passed",
-          "duration": 332,
+          "duration": 798,
           "error": ""
         },
         {
-          "title": "should fill email and password fields",
+          "title": "should submit form with environment credentials",
           "status": "passed",
-          "duration": 286,
+          "duration": 839,
           "error": ""
         },
         {
-          "title": "should attempt login with demo credentials - user1",
-          "status": "passed",
-          "duration": 349,
-          "error": ""
+          "title": "should have proper input field styling",
+          "status": "failed",
+          "duration": 10231,
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('input[type=\"email\"]')\nExpected: \u001b[32m\"100%\"\u001b[39m\nReceived: \u001b[31m\"304px\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n\u001b[2m    13 \u00d7 locator resolved to <input value=\"\" required=\"\" type=\"email\" placeholder=\"user1@example.com\"/>\u001b[22m\n\u001b[2m       - unexpected value \"304px\"\u001b[22m\n"
         },
         {
-          "title": "should attempt login with demo credentials - user2",
-          "status": "passed",
-          "duration": 346,
-          "error": ""
+          "title": "should have submit button with proper styling",
+          "status": "failed",
+          "duration": 10240,
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('button[type=\"submit\"]')\nExpected: \u001b[32m\"100%\"\u001b[39m\nReceived: \u001b[31m\"304px\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('button[type=\"submit\"]')\u001b[22m\n\u001b[2m    13 \u00d7 locator resolved to <button type=\"submit\">Sign In</button>\u001b[22m\n\u001b[2m       - unexpected value \"304px\"\u001b[22m\n"
         },
         {
-          "title": "should attempt login with demo credentials - user3",
+          "title": "should clear input values when typing",
           "status": "passed",
-          "duration": 327,
-          "error": ""
-        },
-        {
-          "title": "should have proper form attributes",
-          "status": "passed",
-          "duration": 266,
-          "error": ""
-        },
-        {
-          "title": "should have accessible labels",
-          "status": "passed",
-          "duration": 255,
-          "error": ""
-        },
-        {
-          "title": "should maintain password visibility security",
-          "status": "passed",
-          "duration": 270,
+          "duration": 383,
           "error": ""
         }
       ]

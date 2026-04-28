@@ -6,22 +6,24 @@
 
 # Test info
 
-- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> should have correct navigation bar styling
-- Location: dom-testing\dashboard.spec.ts:26:3
+- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> should have correct page background color
+- Location: dom-testing\dashboard.spec.ts:53:3
 
 # Error details
 
 ```
 Error: expect(locator).toHaveCSS(expected) failed
 
-Locator: locator('nav')
-Expected: "rgb(44, 62, 80)"
-Timeout: 10000ms
-Error: element(s) not found
+Locator:  locator('#root > div').first()
+Expected: "100vh"
+Received: "720px"
+Timeout:  10000ms
 
 Call log:
   - Expect "toHaveCSS" with timeout 10000ms
-  - waiting for locator('nav')
+  - waiting for locator('#root > div').first()
+    14 × locator resolved to <div>…</div>
+       - unexpected value "720px"
 
 ```
 
@@ -78,8 +80,7 @@ Call log:
   27  |     const nav = page.locator('nav');
   28  |     
   29  |     // Verify navigation bar background color
-> 30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
-      |                       ^ Error: expect(locator).toHaveCSS(expected) failed
+  30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
   31  |     
   32  |     // Verify padding
   33  |     await expect(nav).toHaveCSS('padding', '16px 32px');
@@ -106,7 +107,8 @@ Call log:
   54  |     // Check if page has correct background color
   55  |     const rootDiv = page.locator('#root > div').first();
   56  |     await expect(rootDiv).toHaveCSS('background-color', 'rgb(236, 240, 241)');
-  57  |     await expect(rootDiv).toHaveCSS('min-height', '100vh');
+> 57  |     await expect(rootDiv).toHaveCSS('min-height', '100vh');
+      |                           ^ Error: expect(locator).toHaveCSS(expected) failed
   58  |   });
   59  | 
   60  |   test('should apply global styles correctly', async ({ page }) => {

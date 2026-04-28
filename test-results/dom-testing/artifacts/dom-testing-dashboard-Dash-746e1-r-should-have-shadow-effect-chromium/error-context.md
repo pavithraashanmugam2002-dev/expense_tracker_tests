@@ -6,21 +6,18 @@
 
 # Test info
 
-- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> should have correct navigation bar styling
-- Location: dom-testing\dashboard.spec.ts:26:3
+- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> navigation bar should have shadow effect
+- Location: dom-testing\dashboard.spec.ts:87:3
 
 # Error details
 
 ```
-Error: expect(locator).toHaveCSS(expected) failed
+Test timeout of 60000ms exceeded.
+```
 
-Locator: locator('nav')
-Expected: "rgb(44, 62, 80)"
-Timeout: 10000ms
-Error: element(s) not found
-
+```
+Error: locator.evaluate: Test timeout of 60000ms exceeded.
 Call log:
-  - Expect "toHaveCSS" with timeout 10000ms
   - waiting for locator('nav')
 
 ```
@@ -78,8 +75,7 @@ Call log:
   27  |     const nav = page.locator('nav');
   28  |     
   29  |     // Verify navigation bar background color
-> 30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
-      |                       ^ Error: expect(locator).toHaveCSS(expected) failed
+  30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
   31  |     
   32  |     // Verify padding
   33  |     await expect(nav).toHaveCSS('padding', '16px 32px');
@@ -138,7 +134,8 @@ Call log:
   86  | 
   87  |   test('navigation bar should have shadow effect', async ({ page }) => {
   88  |     const nav = page.locator('nav');
-  89  |     const boxShadow = await nav.evaluate((el) => 
+> 89  |     const boxShadow = await nav.evaluate((el) => 
+      |                                 ^ Error: locator.evaluate: Test timeout of 60000ms exceeded.
   90  |       window.getComputedStyle(el).boxShadow
   91  |     );
   92  |     

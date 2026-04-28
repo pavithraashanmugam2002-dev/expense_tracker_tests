@@ -64,11 +64,11 @@
         {
           "title": "Dashboard Page",
           "file": "dom-testing/dashboard.spec.ts",
-          "line": 12,
+          "line": 3,
           "column": 6,
           "specs": [
             {
-              "title": "should display navigation bar with app title",
+              "title": "should display navigation bar with application name",
               "ok": false,
               "tags": [],
               "tests": [
@@ -82,70 +82,62 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "timedOut",
-                      "duration": 60103,
+                      "status": "failed",
+                      "duration": 10731,
                       "error": {
-                        "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:13:8",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav')\u001b[22m\n\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:11:23",
                         "location": {
                           "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
-                          "column": 8,
-                          "line": 13
+                          "column": 23,
+                          "line": 11
                         },
-                        "snippet": "\u001b[0m \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Dashboard Page'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m login(page)\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/dashboard'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 16 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m  9 |\u001b[39m     \u001b[90m// Check if navigation bar exists\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mconst\u001b[39m nav \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'nav'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m expect(nav)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 12 |\u001b[39m     \n \u001b[90m 13 |\u001b[39m     \u001b[90m// Check application name/logo\u001b[39m\n \u001b[90m 14 |\u001b[39m     \u001b[36mconst\u001b[39m appName \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1'\u001b[39m\u001b[33m,\u001b[39m { hasText\u001b[33m:\u001b[39m \u001b[32m'💰 Application'\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
-                            "column": 8,
-                            "line": 13
+                            "column": 23,
+                            "line": 11
                           },
-                          "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n  11 |\n  12 | test.describe('Dashboard Page', () => {\n> 13 |   test.beforeEach(async ({ page }) => {\n     |        ^\n  14 |     await login(page);\n  15 |     await page.goto('/dashboard');\n  16 |   });\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:13:8"
-                        },
-                        {
-                          "location": {
-                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
-                            "column": 14,
-                            "line": 6
-                          },
-                          "message": "Error: page.fill: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input#emailId')\u001b[22m\n\n\n  4 | async function login(page: Page) {\n  5 |   await page.goto('/login');\n> 6 |   await page.fill('input#emailId', process.env.TEST_USER_EMAIL || 'alice@example.com');\n    |              ^\n  7 |   await page.fill('input#password', process.env.TEST_USER_PASSWORD || 'password123');\n  8 |   await page.click('button[type=\"submit\"]');\n  9 |   await page.waitForURL('/dashboard');\n    at login (c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:6:14)\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:14:5"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav')\u001b[22m\n\n\n   9 |     // Check if navigation bar exists\n  10 |     const nav = page.locator('nav');\n> 11 |     await expect(nav).toBeVisible();\n     |                       ^\n  12 |     \n  13 |     // Check application name/logo\n  14 |     const appName = page.locator('h1', { hasText: '💰 Application' });\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:11:23"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-24T08:22:20.844Z",
+                      "startTime": "2026-04-28T06:48:50.685Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-ef4dc-vigation-bar-with-app-title-chromium\\test-failed-1.png"
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-03fdc-n-bar-with-application-name-chromium\\test-failed-1.png"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-ef4dc-vigation-bar-with-app-title-chromium\\error-context.md"
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-03fdc-n-bar-with-application-name-chromium\\error-context.md"
                         }
                       ],
                       "errorLocation": {
                         "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
-                        "column": 8,
-                        "line": 13
+                        "column": 23,
+                        "line": 11
                       }
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "5c6f62394ce1e13aa600-e372c0dd9cd18dae6623",
+              "id": "5c6f62394ce1e13aa600-7cfeab033f1d0232b582",
               "file": "dom-testing/dashboard.spec.ts",
-              "line": 18,
+              "line": 8,
               "column": 3
             },
             {
-              "title": "should display logged-in user email",
+              "title": "should display user email in navigation",
               "ok": false,
               "tags": [],
               "tests": [
@@ -159,66 +151,58 @@
                     {
                       "workerIndex": 2,
                       "parallelIndex": 0,
-                      "status": "timedOut",
-                      "duration": 60105,
+                      "status": "failed",
+                      "duration": 10238,
                       "error": {
-                        "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:13:8",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('span').filter({ hasText: 'user1@example.com' })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('span').filter({ hasText: 'user1@example.com' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('span').filter({ hasText: 'user1@example.com' })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('span').filter({ hasText: 'user1@example.com' })\u001b[22m\n\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:22:29",
                         "location": {
                           "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
-                          "column": 8,
-                          "line": 13
+                          "column": 29,
+                          "line": 22
                         },
-                        "snippet": "\u001b[0m \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Dashboard Page'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m login(page)\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/dashboard'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 16 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 20 |\u001b[39m     \u001b[90m// Check if user email is displayed\u001b[39m\n \u001b[90m 21 |\u001b[39m     \u001b[36mconst\u001b[39m userEmail \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'span'\u001b[39m\u001b[33m,\u001b[39m { hasText\u001b[33m:\u001b[39m \u001b[32m'user1@example.com'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m expect(userEmail)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m expect(userEmail)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'color'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'rgb(236, 240, 241)'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 24 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
-                            "column": 8,
-                            "line": 13
+                            "column": 29,
+                            "line": 22
                           },
-                          "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n  11 |\n  12 | test.describe('Dashboard Page', () => {\n> 13 |   test.beforeEach(async ({ page }) => {\n     |        ^\n  14 |     await login(page);\n  15 |     await page.goto('/dashboard');\n  16 |   });\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:13:8"
-                        },
-                        {
-                          "location": {
-                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
-                            "column": 14,
-                            "line": 6
-                          },
-                          "message": "Error: page.fill: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input#emailId')\u001b[22m\n\n\n  4 | async function login(page: Page) {\n  5 |   await page.goto('/login');\n> 6 |   await page.fill('input#emailId', process.env.TEST_USER_EMAIL || 'alice@example.com');\n    |              ^\n  7 |   await page.fill('input#password', process.env.TEST_USER_PASSWORD || 'password123');\n  8 |   await page.click('button[type=\"submit\"]');\n  9 |   await page.waitForURL('/dashboard');\n    at login (c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:6:14)\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:14:5"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('span').filter({ hasText: 'user1@example.com' })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('span').filter({ hasText: 'user1@example.com' })\u001b[22m\n\n\n  20 |     // Check if user email is displayed\n  21 |     const userEmail = page.locator('span', { hasText: 'user1@example.com' });\n> 22 |     await expect(userEmail).toBeVisible();\n     |                             ^\n  23 |     await expect(userEmail).toHaveCSS('color', 'rgb(236, 240, 241)');\n  24 |   });\n  25 |\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:22:29"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-24T08:23:24.050Z",
+                      "startTime": "2026-04-28T06:49:03.639Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-79ef9-isplay-logged-in-user-email-chromium\\test-failed-1.png"
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-5cdf2-ay-user-email-in-navigation-chromium\\test-failed-1.png"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-79ef9-isplay-logged-in-user-email-chromium\\error-context.md"
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-5cdf2-ay-user-email-in-navigation-chromium\\error-context.md"
                         }
                       ],
                       "errorLocation": {
                         "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
-                        "column": 8,
-                        "line": 13
+                        "column": 29,
+                        "line": 22
                       }
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "5c6f62394ce1e13aa600-f37c7d2ed345136843fd",
+              "id": "5c6f62394ce1e13aa600-6f342e456cde92e80944",
               "file": "dom-testing/dashboard.spec.ts",
-              "line": 27,
+              "line": 19,
               "column": 3
             },
             {
@@ -234,42 +218,34 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 4,
                       "parallelIndex": 0,
-                      "status": "timedOut",
-                      "duration": 60072,
+                      "status": "failed",
+                      "duration": 10279,
                       "error": {
-                        "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:13:8",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav')\nExpected: \u001b[32m\"rgb(44, 62, 80)\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav')\nExpected: \u001b[32m\"rgb(44, 62, 80)\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav')\u001b[22m\n\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:30:23",
                         "location": {
                           "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
-                          "column": 8,
-                          "line": 13
+                          "column": 23,
+                          "line": 30
                         },
-                        "snippet": "\u001b[0m \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Dashboard Page'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m login(page)\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/dashboard'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 16 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 28 |\u001b[39m     \n \u001b[90m 29 |\u001b[39m     \u001b[90m// Verify navigation bar background color\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 30 |\u001b[39m     \u001b[36mawait\u001b[39m expect(nav)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'background-color'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'rgb(44, 62, 80)'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 31 |\u001b[39m     \n \u001b[90m 32 |\u001b[39m     \u001b[90m// Verify padding\u001b[39m\n \u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m expect(nav)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'padding'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'16px 32px'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
-                            "column": 8,
-                            "line": 13
+                            "column": 23,
+                            "line": 30
                           },
-                          "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n  11 |\n  12 | test.describe('Dashboard Page', () => {\n> 13 |   test.beforeEach(async ({ page }) => {\n     |        ^\n  14 |     await login(page);\n  15 |     await page.goto('/dashboard');\n  16 |   });\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:13:8"
-                        },
-                        {
-                          "location": {
-                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
-                            "column": 14,
-                            "line": 6
-                          },
-                          "message": "Error: page.fill: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input#emailId')\u001b[22m\n\n\n  4 | async function login(page: Page) {\n  5 |   await page.goto('/login');\n> 6 |   await page.fill('input#emailId', process.env.TEST_USER_EMAIL || 'alice@example.com');\n    |              ^\n  7 |   await page.fill('input#password', process.env.TEST_USER_PASSWORD || 'password123');\n  8 |   await page.click('button[type=\"submit\"]');\n  9 |   await page.waitForURL('/dashboard');\n    at login (c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:6:14)\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:14:5"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav')\nExpected: \u001b[32m\"rgb(44, 62, 80)\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav')\u001b[22m\n\n\n  28 |     \n  29 |     // Verify navigation bar background color\n> 30 |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');\n     |                       ^\n  31 |     \n  32 |     // Verify padding\n  33 |     await expect(nav).toHaveCSS('padding', '16px 32px');\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:30:23"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-24T08:24:25.500Z",
+                      "startTime": "2026-04-28T06:49:14.918Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -285,8 +261,8 @@
                       ],
                       "errorLocation": {
                         "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
-                        "column": 8,
-                        "line": 13
+                        "column": 23,
+                        "line": 30
                       }
                     }
                   ],
@@ -295,11 +271,11 @@
               ],
               "id": "5c6f62394ce1e13aa600-20eb83fc32f1fee13aa8",
               "file": "dom-testing/dashboard.spec.ts",
-              "line": 33,
+              "line": 26,
               "column": 3
             },
             {
-              "title": "should display navigation content in flex layout",
+              "title": "should display navigation items aligned correctly",
               "ok": false,
               "tags": [],
               "tests": [
@@ -311,68 +287,569 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
-                      "status": "timedOut",
-                      "duration": 60065,
+                      "status": "failed",
+                      "duration": 10246,
                       "error": {
-                        "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:13:8",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav > div').first()\nExpected: \u001b[32m\"flex\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav > div').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav > div').first()\nExpected: \u001b[32m\"flex\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav > div').first()\u001b[22m\n\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:39:32",
                         "location": {
                           "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
-                          "column": 8,
-                          "line": 13
+                          "column": 32,
+                          "line": 39
                         },
-                        "snippet": "\u001b[0m \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Dashboard Page'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m login(page)\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/dashboard'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 16 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 37 |\u001b[39m     \u001b[90m// Check if navigation container has correct layout\u001b[39m\n \u001b[90m 38 |\u001b[39m     \u001b[36mconst\u001b[39m navContainer \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'nav > div'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 39 |\u001b[39m     \u001b[36mawait\u001b[39m expect(navContainer)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'display'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'flex'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 40 |\u001b[39m     \u001b[36mawait\u001b[39m expect(navContainer)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'justify-content'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'space-between'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 41 |\u001b[39m     \u001b[36mawait\u001b[39m expect(navContainer)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'align-items'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'center'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 42 |\u001b[39m     \u001b[36mawait\u001b[39m expect(navContainer)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'max-width'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'1200px'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
-                            "column": 8,
-                            "line": 13
+                            "column": 32,
+                            "line": 39
                           },
-                          "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n  11 |\n  12 | test.describe('Dashboard Page', () => {\n> 13 |   test.beforeEach(async ({ page }) => {\n     |        ^\n  14 |     await login(page);\n  15 |     await page.goto('/dashboard');\n  16 |   });\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:13:8"
-                        },
-                        {
-                          "location": {
-                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
-                            "column": 14,
-                            "line": 6
-                          },
-                          "message": "Error: page.fill: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input#emailId')\u001b[22m\n\n\n  4 | async function login(page: Page) {\n  5 |   await page.goto('/login');\n> 6 |   await page.fill('input#emailId', process.env.TEST_USER_EMAIL || 'alice@example.com');\n    |              ^\n  7 |   await page.fill('input#password', process.env.TEST_USER_PASSWORD || 'password123');\n  8 |   await page.click('button[type=\"submit\"]');\n  9 |   await page.waitForURL('/dashboard');\n    at login (c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:6:14)\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:14:5"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav > div').first()\nExpected: \u001b[32m\"flex\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav > div').first()\u001b[22m\n\n\n  37 |     // Check if navigation container has correct layout\n  38 |     const navContainer = page.locator('nav > div').first();\n> 39 |     await expect(navContainer).toHaveCSS('display', 'flex');\n     |                                ^\n  40 |     await expect(navContainer).toHaveCSS('justify-content', 'space-between');\n  41 |     await expect(navContainer).toHaveCSS('align-items', 'center');\n  42 |     await expect(navContainer).toHaveCSS('max-width', '1200px');\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:39:32"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-24T08:25:26.757Z",
+                      "startTime": "2026-04-28T06:49:26.234Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-22490-tion-content-in-flex-layout-chromium\\test-failed-1.png"
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-f5837-ion-items-aligned-correctly-chromium\\test-failed-1.png"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-22490-tion-content-in-flex-layout-chromium\\error-context.md"
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-f5837-ion-items-aligned-correctly-chromium\\error-context.md"
                         }
                       ],
                       "errorLocation": {
                         "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
-                        "column": 8,
-                        "line": 13
+                        "column": 32,
+                        "line": 39
                       }
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "5c6f62394ce1e13aa600-6034bb52a6a0aeb7495f",
+              "id": "5c6f62394ce1e13aa600-623ac4856546b7e7ae24",
               "file": "dom-testing/dashboard.spec.ts",
-              "line": 38,
+              "line": 36,
+              "column": 3
+            },
+            {
+              "title": "should display user info section with correct layout",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 351,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div').filter({ hasText: 'user1@example.com' }).locator('..')\nExpected: \u001b[32m\"flex\"\u001b[39m\nError: strict mode violation: locator('div').filter({ hasText: 'user1@example.com' }).locator('..') resolved to 4 elements:\n    1) <body>…</body> aka locator('body')\n    2) <div id=\"root\">…</div> aka locator('#root')\n    3) <div>…</div> aka locator('div').nth(1)\n    4) <div>…</div> aka getByText('💰 Expense TrackerSign in to')\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('div').filter({ hasText: 'user1@example.com' }).locator('..')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div').filter({ hasText: 'user1@example.com' }).locator('..')\nExpected: \u001b[32m\"flex\"\u001b[39m\nError: strict mode violation: locator('div').filter({ hasText: 'user1@example.com' }).locator('..') resolved to 4 elements:\n    1) <body>…</body> aka locator('body')\n    2) <div id=\"root\">…</div> aka locator('#root')\n    3) <div>…</div> aka locator('div').nth(1)\n    4) <div>…</div> aka getByText('💰 Expense TrackerSign in to')\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('div').filter({ hasText: 'user1@example.com' }).locator('..')\u001b[22m\n\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:48:35",
+                        "location": {
+                          "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                          "column": 35,
+                          "line": 48
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 46 |\u001b[39m     \u001b[90m// Check if user info section exists with correct styling\u001b[39m\n \u001b[90m 47 |\u001b[39m     \u001b[36mconst\u001b[39m userInfoSection \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m\u001b[33m,\u001b[39m { hasText\u001b[33m:\u001b[39m \u001b[32m'user1@example.com'\u001b[39m })\u001b[33m.\u001b[39mlocator(\u001b[32m'..'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 48 |\u001b[39m     \u001b[36mawait\u001b[39m expect(userInfoSection)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'display'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'flex'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 49 |\u001b[39m     \u001b[36mawait\u001b[39m expect(userInfoSection)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'align-items'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'center'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 50 |\u001b[39m     \u001b[36mawait\u001b[39m expect(userInfoSection)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'gap'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'16px'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 51 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                            "column": 35,
+                            "line": 48
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div').filter({ hasText: 'user1@example.com' }).locator('..')\nExpected: \u001b[32m\"flex\"\u001b[39m\nError: strict mode violation: locator('div').filter({ hasText: 'user1@example.com' }).locator('..') resolved to 4 elements:\n    1) <body>…</body> aka locator('body')\n    2) <div id=\"root\">…</div> aka locator('#root')\n    3) <div>…</div> aka locator('div').nth(1)\n    4) <div>…</div> aka getByText('💰 Expense TrackerSign in to')\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('div').filter({ hasText: 'user1@example.com' }).locator('..')\u001b[22m\n\n\n  46 |     // Check if user info section exists with correct styling\n  47 |     const userInfoSection = page.locator('div', { hasText: 'user1@example.com' }).locator('..');\n> 48 |     await expect(userInfoSection).toHaveCSS('display', 'flex');\n     |                                   ^\n  49 |     await expect(userInfoSection).toHaveCSS('align-items', 'center');\n  50 |     await expect(userInfoSection).toHaveCSS('gap', '16px');\n  51 |   });\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:48:35"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-28T06:49:37.555Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-3fa62-section-with-correct-layout-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-3fa62-section-with-correct-layout-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                        "column": 35,
+                        "line": 48
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5c6f62394ce1e13aa600-31268c1368f82cb3da83",
+              "file": "dom-testing/dashboard.spec.ts",
+              "line": 45,
+              "column": 3
+            },
+            {
+              "title": "should have correct page background color",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10302,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#root > div').first()\nExpected: \u001b[32m\"100vh\"\u001b[39m\nReceived: \u001b[31m\"720px\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#root > div').first()\u001b[22m\n\u001b[2m    14 × locator resolved to <div>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"720px\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#root > div').first()\nExpected: \u001b[32m\"100vh\"\u001b[39m\nReceived: \u001b[31m\"720px\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#root > div').first()\u001b[22m\n\u001b[2m    14 × locator resolved to <div>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"720px\"\u001b[22m\n\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:57:27",
+                        "location": {
+                          "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                          "column": 27,
+                          "line": 57
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 55 |\u001b[39m     \u001b[36mconst\u001b[39m rootDiv \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#root > div'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 56 |\u001b[39m     \u001b[36mawait\u001b[39m expect(rootDiv)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'background-color'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'rgb(236, 240, 241)'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 57 |\u001b[39m     \u001b[36mawait\u001b[39m expect(rootDiv)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'min-height'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'100vh'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 58 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 59 |\u001b[39m\n \u001b[90m 60 |\u001b[39m   test(\u001b[32m'should apply global styles correctly'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                            "column": 27,
+                            "line": 57
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#root > div').first()\nExpected: \u001b[32m\"100vh\"\u001b[39m\nReceived: \u001b[31m\"720px\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#root > div').first()\u001b[22m\n\u001b[2m    14 × locator resolved to <div>…</div>\u001b[22m\n\u001b[2m       - unexpected value \"720px\"\u001b[22m\n\n\n  55 |     const rootDiv = page.locator('#root > div').first();\n  56 |     await expect(rootDiv).toHaveCSS('background-color', 'rgb(236, 240, 241)');\n> 57 |     await expect(rootDiv).toHaveCSS('min-height', '100vh');\n     |                           ^\n  58 |   });\n  59 |\n  60 |   test('should apply global styles correctly', async ({ page }) => {\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:57:27"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-28T06:49:38.963Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-91a4d-rrect-page-background-color-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-91a4d-rrect-page-background-color-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                        "column": 27,
+                        "line": 57
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5c6f62394ce1e13aa600-f6f7683eefa4df118587",
+              "file": "dom-testing/dashboard.spec.ts",
+              "line": 53,
+              "column": 3
+            },
+            {
+              "title": "should apply global styles correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 344,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-28T06:49:50.313Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5c6f62394ce1e13aa600-e9e8894a735737867801",
+              "file": "dom-testing/dashboard.spec.ts",
+              "line": 60,
+              "column": 3
+            },
+            {
+              "title": "should have responsive navigation layout",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10198,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav')\u001b[22m\n\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:77:23",
+                        "location": {
+                          "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                          "column": 23,
+                          "line": 77
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 75 |\u001b[39m     \u001b[90m// Navigation should still be visible\u001b[39m\n \u001b[90m 76 |\u001b[39m     \u001b[36mconst\u001b[39m nav \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'nav'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 77 |\u001b[39m     \u001b[36mawait\u001b[39m expect(nav)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 78 |\u001b[39m     \n \u001b[90m 79 |\u001b[39m     \u001b[90m// Navigation items should still be in flexbox layout\u001b[39m\n \u001b[90m 80 |\u001b[39m     \u001b[36mconst\u001b[39m navContainer \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'nav > div'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                            "column": 23,
+                            "line": 77
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('nav')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('nav')\u001b[22m\n\n\n  75 |     // Navigation should still be visible\n  76 |     const nav = page.locator('nav');\n> 77 |     await expect(nav).toBeVisible();\n     |                       ^\n  78 |     \n  79 |     // Navigation items should still be in flexbox layout\n  80 |     const navContainer = page.locator('nav > div').first();\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:77:23"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-28T06:49:50.775Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-83fac-esponsive-navigation-layout-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-83fac-esponsive-navigation-layout-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                        "column": 23,
+                        "line": 77
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5c6f62394ce1e13aa600-794295c3742269ddd3fb",
+              "file": "dom-testing/dashboard.spec.ts",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "navigation bar should have shadow effect",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 60069,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                            "column": 33,
+                            "line": 89
+                          },
+                          "message": "Error: locator.evaluate: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('nav')\u001b[22m\n\n\n  87 |   test('navigation bar should have shadow effect', async ({ page }) => {\n  88 |     const nav = page.locator('nav');\n> 89 |     const boxShadow = await nav.evaluate((el) => \n     |                                 ^\n  90 |       window.getComputedStyle(el).boxShadow\n  91 |     );\n  92 |     \n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:89:33"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-28T06:50:01.916Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-746e1-r-should-have-shadow-effect-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-746e1-r-should-have-shadow-effect-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5c6f62394ce1e13aa600-cf63e0b93a2a0aa13c9c",
+              "file": "dom-testing/dashboard.spec.ts",
+              "line": 87,
+              "column": 3
+            },
+            {
+              "title": "should display complete page structure",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10339,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#root nav')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#root nav')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#root nav')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#root nav')\u001b[22m\n\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:109:23",
+                        "location": {
+                          "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                          "column": 23,
+                          "line": 109
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 107 |\u001b[39m     \u001b[90m// Verify navigation exists inside main container\u001b[39m\n \u001b[90m 108 |\u001b[39m     \u001b[36mconst\u001b[39m nav \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#root nav'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 109 |\u001b[39m     \u001b[36mawait\u001b[39m expect(nav)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 110 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 111 |\u001b[39m\n \u001b[90m 112 |\u001b[39m   test(\u001b[32m'h1 element should have correct font size'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                            "column": 23,
+                            "line": 109
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#root nav')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#root nav')\u001b[22m\n\n\n  107 |     // Verify navigation exists inside main container\n  108 |     const nav = page.locator('#root nav');\n> 109 |     await expect(nav).toBeVisible();\n      |                       ^\n  110 |   });\n  111 |\n  112 |   test('h1 element should have correct font size', async ({ page }) => {\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:109:23"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-28T06:51:03.056Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-c0a1a-lay-complete-page-structure-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-c0a1a-lay-complete-page-structure-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                        "column": 23,
+                        "line": 109
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5c6f62394ce1e13aa600-9731077992ba7a59e98b",
+              "file": "dom-testing/dashboard.spec.ts",
+              "line": 98,
+              "column": 3
+            },
+            {
+              "title": "h1 element should have correct font size",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10288,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h1').filter({ hasText: '💰 Application' })\nExpected: \u001b[32m\"24px\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('h1').filter({ hasText: '💰 Application' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h1').filter({ hasText: '💰 Application' })\nExpected: \u001b[32m\"24px\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('h1').filter({ hasText: '💰 Application' })\u001b[22m\n\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:114:27",
+                        "location": {
+                          "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                          "column": 27,
+                          "line": 114
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 112 |\u001b[39m   test(\u001b[32m'h1 element should have correct font size'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 113 |\u001b[39m     \u001b[36mconst\u001b[39m heading \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1'\u001b[39m\u001b[33m,\u001b[39m { hasText\u001b[33m:\u001b[39m \u001b[32m'💰 Application'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 114 |\u001b[39m     \u001b[36mawait\u001b[39m expect(heading)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'font-size'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'24px'\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// 1.5rem = 24px\u001b[39m\n \u001b[90m     |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 115 |\u001b[39m     \u001b[36mawait\u001b[39m expect(heading)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'margin'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'0px'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 116 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 117 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                            "column": 27,
+                            "line": 114
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h1').filter({ hasText: '💰 Application' })\nExpected: \u001b[32m\"24px\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('h1').filter({ hasText: '💰 Application' })\u001b[22m\n\n\n  112 |   test('h1 element should have correct font size', async ({ page }) => {\n  113 |     const heading = page.locator('h1', { hasText: '💰 Application' });\n> 114 |     await expect(heading).toHaveCSS('font-size', '24px'); // 1.5rem = 24px\n      |                           ^\n  115 |     await expect(heading).toHaveCSS('margin', '0px');\n  116 |   });\n  117 |\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:114:27"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-28T06:51:14.467Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-39225-ould-have-correct-font-size-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-39225-ould-have-correct-font-size-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                        "column": 27,
+                        "line": 114
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5c6f62394ce1e13aa600-ef53c341ea47d2fcfd30",
+              "file": "dom-testing/dashboard.spec.ts",
+              "line": 112,
+              "column": 3
+            },
+            {
+              "title": "user email should have correct font size",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10242,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('span').filter({ hasText: 'user1@example.com' })\nExpected: \u001b[32m\"14.4px\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('span').filter({ hasText: 'user1@example.com' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('span').filter({ hasText: 'user1@example.com' })\nExpected: \u001b[32m\"14.4px\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('span').filter({ hasText: 'user1@example.com' })\u001b[22m\n\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:120:29",
+                        "location": {
+                          "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                          "column": 29,
+                          "line": 120
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 118 |\u001b[39m   test(\u001b[32m'user email should have correct font size'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 119 |\u001b[39m     \u001b[36mconst\u001b[39m userEmail \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'span'\u001b[39m\u001b[33m,\u001b[39m { hasText\u001b[33m:\u001b[39m \u001b[32m'user1@example.com'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 120 |\u001b[39m     \u001b[36mawait\u001b[39m expect(userEmail)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'font-size'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'14.4px'\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// 0.9rem\u001b[39m\n \u001b[90m     |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 121 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 122 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                            "column": 29,
+                            "line": 120
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('span').filter({ hasText: 'user1@example.com' })\nExpected: \u001b[32m\"14.4px\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('span').filter({ hasText: 'user1@example.com' })\u001b[22m\n\n\n  118 |   test('user email should have correct font size', async ({ page }) => {\n  119 |     const userEmail = page.locator('span', { hasText: 'user1@example.com' });\n> 120 |     await expect(userEmail).toHaveCSS('font-size', '14.4px'); // 0.9rem\n      |                             ^\n  121 |   });\n  122 | });\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts:120:29"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-28T06:51:25.752Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-1c387-ould-have-correct-font-size-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-dashboard-Dash-1c387-ould-have-correct-font-size-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\dashboard.spec.ts",
+                        "column": 29,
+                        "line": 120
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5c6f62394ce1e13aa600-d505d5dd454651b886bb",
+              "file": "dom-testing/dashboard.spec.ts",
+              "line": 118,
               "column": 3
             }
           ]
@@ -393,7 +870,7 @@
           "column": 6,
           "specs": [
             {
-              "title": "should display login form with all elements",
+              "title": "should display login page elements",
               "ok": true,
               "tags": [],
               "tests": [
@@ -408,12 +885,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 1094,
+                      "duration": 868,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-24T08:22:20.860Z",
+                      "startTime": "2026-04-28T06:48:50.686Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -421,13 +898,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "ee68263997bbc533fc92-3bb46a90fd70bb7c4020",
+              "id": "ee68263997bbc533fc92-c00040045cfa54f41084",
               "file": "dom-testing/login.spec.ts",
               "line": 8,
               "column": 3
             },
             {
-              "title": "should display demo credentials",
+              "title": "should submit form with empty fields",
               "ok": true,
               "tags": [],
               "tests": [
@@ -442,12 +919,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 295,
+                      "duration": 348,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-24T08:22:23.454Z",
+                      "startTime": "2026-04-28T06:48:52.839Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -455,13 +932,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "ee68263997bbc533fc92-29daeb11e4458fabf642",
+              "id": "ee68263997bbc533fc92-012e27467a4704e9a9ed",
               "file": "dom-testing/login.spec.ts",
-              "line": 37,
+              "line": 34,
               "column": 3
             },
             {
-              "title": "should handle empty form submission",
+              "title": "should submit form with invalid email",
               "ok": true,
               "tags": [],
               "tests": [
@@ -476,12 +953,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 411,
+                      "duration": 374,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-24T08:22:23.764Z",
+                      "startTime": "2026-04-28T06:48:53.205Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -489,13 +966,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "ee68263997bbc533fc92-c304f9c67fc6dac9d81a",
+              "id": "ee68263997bbc533fc92-c7b5465f702e3e0d448d",
               "file": "dom-testing/login.spec.ts",
               "line": 47,
               "column": 3
             },
             {
-              "title": "should handle invalid email format",
+              "title": "should submit form with valid demo credentials - user1",
               "ok": true,
               "tags": [],
               "tests": [
@@ -510,12 +987,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 381,
+                      "duration": 831,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-24T08:22:24.189Z",
+                      "startTime": "2026-04-28T06:48:53.591Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -523,13 +1000,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "ee68263997bbc533fc92-791c23848c9535de59d9",
+              "id": "ee68263997bbc533fc92-f3ed2dbc317f384e16e3",
               "file": "dom-testing/login.spec.ts",
-              "line": 58,
+              "line": 61,
               "column": 3
             },
             {
-              "title": "should handle empty email with valid password",
+              "title": "should submit form with valid demo credentials - user2",
               "ok": true,
               "tags": [],
               "tests": [
@@ -544,12 +1021,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 354,
+                      "duration": 803,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-24T08:22:24.584Z",
+                      "startTime": "2026-04-28T06:48:54.436Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -557,13 +1034,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "ee68263997bbc533fc92-375016e14b41b2a5e3d9",
+              "id": "ee68263997bbc533fc92-918d0d950098a6a4bcb0",
               "file": "dom-testing/login.spec.ts",
-              "line": 74,
+              "line": 73,
               "column": 3
             },
             {
-              "title": "should handle valid email with empty password",
+              "title": "should submit form with valid demo credentials - user3",
               "ok": true,
               "tags": [],
               "tests": [
@@ -578,12 +1055,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 332,
+                      "duration": 798,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-24T08:22:24.954Z",
+                      "startTime": "2026-04-28T06:48:55.252Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -591,13 +1068,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "ee68263997bbc533fc92-a9aa61ba5cbef64a3e9b",
+              "id": "ee68263997bbc533fc92-4b70538e88b6d768086a",
               "file": "dom-testing/login.spec.ts",
-              "line": 88,
+              "line": 85,
               "column": 3
             },
             {
-              "title": "should fill email and password fields",
+              "title": "should submit form with environment credentials",
               "ok": true,
               "tags": [],
               "tests": [
@@ -612,12 +1089,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 286,
+                      "duration": 839,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-24T08:22:25.299Z",
+                      "startTime": "2026-04-28T06:48:56.070Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -625,14 +1102,14 @@
                   "status": "expected"
                 }
               ],
-              "id": "ee68263997bbc533fc92-5c5df1e803f62804924b",
+              "id": "ee68263997bbc533fc92-c96298e35f29370ae509",
               "file": "dom-testing/login.spec.ts",
-              "line": 102,
+              "line": 97,
               "column": 3
             },
             {
-              "title": "should attempt login with demo credentials - user1",
-              "ok": true,
+              "title": "should have proper input field styling",
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -645,28 +1122,63 @@
                     {
                       "workerIndex": 1,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 349,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 10231,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('input[type=\"email\"]')\nExpected: \u001b[32m\"100%\"\u001b[39m\nReceived: \u001b[31m\"304px\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n\u001b[2m    13 × locator resolved to <input value=\"\" required=\"\" type=\"email\" placeholder=\"user1@example.com\"/>\u001b[22m\n\u001b[2m       - unexpected value \"304px\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('input[type=\"email\"]')\nExpected: \u001b[32m\"100%\"\u001b[39m\nReceived: \u001b[31m\"304px\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n\u001b[2m    13 × locator resolved to <input value=\"\" required=\"\" type=\"email\" placeholder=\"user1@example.com\"/>\u001b[22m\n\u001b[2m       - unexpected value \"304px\"\u001b[22m\n\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\login.spec.ts:117:30",
+                        "location": {
+                          "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\login.spec.ts",
+                          "column": 30,
+                          "line": 117
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 115 |\u001b[39m     \n \u001b[90m 116 |\u001b[39m     \u001b[90m// Check inputs have proper styling attributes\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 117 |\u001b[39m     \u001b[36mawait\u001b[39m expect(emailInput)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'width'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'100%'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 118 |\u001b[39m     \u001b[36mawait\u001b[39m expect(passwordInput)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'width'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'100%'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 119 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 120 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\login.spec.ts",
+                            "column": 30,
+                            "line": 117
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('input[type=\"email\"]')\nExpected: \u001b[32m\"100%\"\u001b[39m\nReceived: \u001b[31m\"304px\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n\u001b[2m    13 × locator resolved to <input value=\"\" required=\"\" type=\"email\" placeholder=\"user1@example.com\"/>\u001b[22m\n\u001b[2m       - unexpected value \"304px\"\u001b[22m\n\n\n  115 |     \n  116 |     // Check inputs have proper styling attributes\n> 117 |     await expect(emailInput).toHaveCSS('width', '100%');\n      |                              ^\n  118 |     await expect(passwordInput).toHaveCSS('width', '100%');\n  119 |   });\n  120 |\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\login.spec.ts:117:30"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-24T08:22:25.598Z",
+                      "startTime": "2026-04-28T06:48:56.923Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-login-Login-Pa-63b47--proper-input-field-styling-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-login-Login-Pa-63b47--proper-input-field-styling-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\login.spec.ts",
+                        "column": 30,
+                        "line": 117
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
-              "id": "ee68263997bbc533fc92-71c267d27bd5e0bd4f4c",
+              "id": "ee68263997bbc533fc92-f4e620bd9612af220371",
               "file": "dom-testing/login.spec.ts",
-              "line": 115,
+              "line": 112,
               "column": 3
             },
             {
-              "title": "should attempt login with demo credentials - user2",
-              "ok": true,
+              "title": "should have submit button with proper styling",
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -677,29 +1189,64 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 3,
                       "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 346,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 10240,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('button[type=\"submit\"]')\nExpected: \u001b[32m\"100%\"\u001b[39m\nReceived: \u001b[31m\"304px\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('button[type=\"submit\"]')\u001b[22m\n\u001b[2m    13 × locator resolved to <button type=\"submit\">Sign In</button>\u001b[22m\n\u001b[2m       - unexpected value \"304px\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('button[type=\"submit\"]')\nExpected: \u001b[32m\"100%\"\u001b[39m\nReceived: \u001b[31m\"304px\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('button[type=\"submit\"]')\u001b[22m\n\u001b[2m    13 × locator resolved to <button type=\"submit\">Sign In</button>\u001b[22m\n\u001b[2m       - unexpected value \"304px\"\u001b[22m\n\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\login.spec.ts:124:32",
+                        "location": {
+                          "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\login.spec.ts",
+                          "column": 32,
+                          "line": 124
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 122 |\u001b[39m     \u001b[36mconst\u001b[39m submitButton \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[type=\"submit\"]'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m     \n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 124 |\u001b[39m     \u001b[36mawait\u001b[39m expect(submitButton)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'width'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'100%'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 125 |\u001b[39m     \u001b[36mawait\u001b[39m expect(submitButton)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'background-color'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'rgb(52, 152, 219)'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 126 |\u001b[39m     \u001b[36mawait\u001b[39m expect(submitButton)\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m'color'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'rgb(255, 255, 255)'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 127 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\login.spec.ts",
+                            "column": 32,
+                            "line": 124
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('button[type=\"submit\"]')\nExpected: \u001b[32m\"100%\"\u001b[39m\nReceived: \u001b[31m\"304px\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('button[type=\"submit\"]')\u001b[22m\n\u001b[2m    13 × locator resolved to <button type=\"submit\">Sign In</button>\u001b[22m\n\u001b[2m       - unexpected value \"304px\"\u001b[22m\n\n\n  122 |     const submitButton = page.locator('button[type=\"submit\"]');\n  123 |     \n> 124 |     await expect(submitButton).toHaveCSS('width', '100%');\n      |                                ^\n  125 |     await expect(submitButton).toHaveCSS('background-color', 'rgb(52, 152, 219)');\n  126 |     await expect(submitButton).toHaveCSS('color', 'rgb(255, 255, 255)');\n  127 |   });\n    at c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\login.spec.ts:124:32"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-24T08:22:25.962Z",
+                      "startTime": "2026-04-28T06:49:08.111Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-login-Login-Pa-e2854--button-with-proper-styling-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\test-results\\dom-testing\\artifacts\\dom-testing-login-Login-Pa-e2854--button-with-proper-styling-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\Users\\Krtrimaiq.ai\\generated files\\Expense Tracker Demo\\tests\\dom-testing\\login.spec.ts",
+                        "column": 32,
+                        "line": 124
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
-              "id": "ee68263997bbc533fc92-5a5d90e54a084394a77b",
+              "id": "ee68263997bbc533fc92-b1bf5db17083b8643cff",
               "file": "dom-testing/login.spec.ts",
-              "line": 131,
+              "line": 121,
               "column": 3
             },
             {
-              "title": "should attempt login with demo credentials - user3",
+              "title": "should clear input values when typing",
               "ok": true,
               "tags": [],
               "tests": [
@@ -711,15 +1258,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 5,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 327,
+                      "duration": 383,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-04-24T08:22:26.322Z",
+                      "startTime": "2026-04-28T06:49:19.387Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -727,111 +1274,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "ee68263997bbc533fc92-45a5ca3ad4849673e3d4",
+              "id": "ee68263997bbc533fc92-1551c4b474042b2397b0",
               "file": "dom-testing/login.spec.ts",
-              "line": 144,
-              "column": 3
-            },
-            {
-              "title": "should have proper form attributes",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 266,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-04-24T08:22:26.665Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "ee68263997bbc533fc92-76ad757fbb81c6750dae",
-              "file": "dom-testing/login.spec.ts",
-              "line": 157,
-              "column": 3
-            },
-            {
-              "title": "should have accessible labels",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 255,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-04-24T08:22:26.944Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "ee68263997bbc533fc92-f70cbc4c4da45e76c579",
-              "file": "dom-testing/login.spec.ts",
-              "line": 170,
-              "column": 3
-            },
-            {
-              "title": "should maintain password visibility security",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 270,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-04-24T08:22:27.211Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "ee68263997bbc533fc92-e28cb2b404fa844f05ea",
-              "file": "dom-testing/login.spec.ts",
-              "line": 179,
+              "line": 129,
               "column": 3
             }
           ]
@@ -841,11 +1286,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-04-24T08:22:19.695Z",
-    "duration": 247355.503,
-    "expected": 13,
+    "startTime": "2026-04-28T06:48:49.492Z",
+    "duration": 166741.84900000002,
+    "expected": 9,
     "skipped": 0,
-    "unexpected": 4,
+    "unexpected": 13,
     "flaky": 0
   }
 }

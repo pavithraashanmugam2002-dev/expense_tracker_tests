@@ -6,22 +6,25 @@
 
 # Test info
 
-- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> should have correct navigation bar styling
-- Location: dom-testing\dashboard.spec.ts:26:3
+- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> should display user info section with correct layout
+- Location: dom-testing\dashboard.spec.ts:45:3
 
 # Error details
 
 ```
 Error: expect(locator).toHaveCSS(expected) failed
 
-Locator: locator('nav')
-Expected: "rgb(44, 62, 80)"
-Timeout: 10000ms
-Error: element(s) not found
+Locator: locator('div').filter({ hasText: 'user1@example.com' }).locator('..')
+Expected: "flex"
+Error: strict mode violation: locator('div').filter({ hasText: 'user1@example.com' }).locator('..') resolved to 4 elements:
+    1) <body>…</body> aka locator('body')
+    2) <div id="root">…</div> aka locator('#root')
+    3) <div>…</div> aka locator('div').nth(1)
+    4) <div>…</div> aka getByText('💰 Expense TrackerSign in to')
 
 Call log:
   - Expect "toHaveCSS" with timeout 10000ms
-  - waiting for locator('nav')
+  - waiting for locator('div').filter({ hasText: 'user1@example.com' }).locator('..')
 
 ```
 
@@ -78,8 +81,7 @@ Call log:
   27  |     const nav = page.locator('nav');
   28  |     
   29  |     // Verify navigation bar background color
-> 30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
-      |                       ^ Error: expect(locator).toHaveCSS(expected) failed
+  30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
   31  |     
   32  |     // Verify padding
   33  |     await expect(nav).toHaveCSS('padding', '16px 32px');
@@ -97,7 +99,8 @@ Call log:
   45  |   test('should display user info section with correct layout', async ({ page }) => {
   46  |     // Check if user info section exists with correct styling
   47  |     const userInfoSection = page.locator('div', { hasText: 'user1@example.com' }).locator('..');
-  48  |     await expect(userInfoSection).toHaveCSS('display', 'flex');
+> 48  |     await expect(userInfoSection).toHaveCSS('display', 'flex');
+      |                                   ^ Error: expect(locator).toHaveCSS(expected) failed
   49  |     await expect(userInfoSection).toHaveCSS('align-items', 'center');
   50  |     await expect(userInfoSection).toHaveCSS('gap', '16px');
   51  |   });

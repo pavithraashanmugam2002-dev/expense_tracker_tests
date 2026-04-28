@@ -6,22 +6,22 @@
 
 # Test info
 
-- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> should have correct navigation bar styling
-- Location: dom-testing\dashboard.spec.ts:26:3
+- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> should display complete page structure
+- Location: dom-testing\dashboard.spec.ts:98:3
 
 # Error details
 
 ```
-Error: expect(locator).toHaveCSS(expected) failed
+Error: expect(locator).toBeVisible() failed
 
-Locator: locator('nav')
-Expected: "rgb(44, 62, 80)"
+Locator: locator('#root nav')
+Expected: visible
 Timeout: 10000ms
 Error: element(s) not found
 
 Call log:
-  - Expect "toHaveCSS" with timeout 10000ms
-  - waiting for locator('nav')
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('#root nav')
 
 ```
 
@@ -49,14 +49,6 @@ Call log:
 # Test source
 
 ```ts
-  1   | import { test, expect, type Page } from '@playwright/test';
-  2   | 
-  3   | test.describe('Dashboard Page', () => {
-  4   |   test.beforeEach(async ({ page }) => {
-  5   |     await page.goto('/dashboard');
-  6   |   });
-  7   | 
-  8   |   test('should display navigation bar with application name', async ({ page }) => {
   9   |     // Check if navigation bar exists
   10  |     const nav = page.locator('nav');
   11  |     await expect(nav).toBeVisible();
@@ -78,8 +70,7 @@ Call log:
   27  |     const nav = page.locator('nav');
   28  |     
   29  |     // Verify navigation bar background color
-> 30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
-      |                       ^ Error: expect(locator).toHaveCSS(expected) failed
+  30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
   31  |     
   32  |     // Verify padding
   33  |     await expect(nav).toHaveCSS('padding', '16px 32px');
@@ -158,7 +149,8 @@ Call log:
   106 |     
   107 |     // Verify navigation exists inside main container
   108 |     const nav = page.locator('#root nav');
-  109 |     await expect(nav).toBeVisible();
+> 109 |     await expect(nav).toBeVisible();
+      |                       ^ Error: expect(locator).toBeVisible() failed
   110 |   });
   111 | 
   112 |   test('h1 element should have correct font size', async ({ page }) => {

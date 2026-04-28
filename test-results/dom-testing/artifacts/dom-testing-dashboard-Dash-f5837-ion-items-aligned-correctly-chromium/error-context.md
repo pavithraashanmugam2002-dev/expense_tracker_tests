@@ -6,22 +6,22 @@
 
 # Test info
 
-- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> should have correct navigation bar styling
-- Location: dom-testing\dashboard.spec.ts:26:3
+- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> should display navigation items aligned correctly
+- Location: dom-testing\dashboard.spec.ts:36:3
 
 # Error details
 
 ```
 Error: expect(locator).toHaveCSS(expected) failed
 
-Locator: locator('nav')
-Expected: "rgb(44, 62, 80)"
+Locator: locator('nav > div').first()
+Expected: "flex"
 Timeout: 10000ms
 Error: element(s) not found
 
 Call log:
   - Expect "toHaveCSS" with timeout 10000ms
-  - waiting for locator('nav')
+  - waiting for locator('nav > div').first()
 
 ```
 
@@ -78,8 +78,7 @@ Call log:
   27  |     const nav = page.locator('nav');
   28  |     
   29  |     // Verify navigation bar background color
-> 30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
-      |                       ^ Error: expect(locator).toHaveCSS(expected) failed
+  30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
   31  |     
   32  |     // Verify padding
   33  |     await expect(nav).toHaveCSS('padding', '16px 32px');
@@ -88,7 +87,8 @@ Call log:
   36  |   test('should display navigation items aligned correctly', async ({ page }) => {
   37  |     // Check if navigation container has correct layout
   38  |     const navContainer = page.locator('nav > div').first();
-  39  |     await expect(navContainer).toHaveCSS('display', 'flex');
+> 39  |     await expect(navContainer).toHaveCSS('display', 'flex');
+      |                                ^ Error: expect(locator).toHaveCSS(expected) failed
   40  |     await expect(navContainer).toHaveCSS('justify-content', 'space-between');
   41  |     await expect(navContainer).toHaveCSS('align-items', 'center');
   42  |     await expect(navContainer).toHaveCSS('max-width', '1200px');

@@ -6,21 +6,21 @@
 
 # Test info
 
-- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> should have correct navigation bar styling
-- Location: dom-testing\dashboard.spec.ts:26:3
+- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> should display navigation bar with application name
+- Location: dom-testing\dashboard.spec.ts:8:3
 
 # Error details
 
 ```
-Error: expect(locator).toHaveCSS(expected) failed
+Error: expect(locator).toBeVisible() failed
 
 Locator: locator('nav')
-Expected: "rgb(44, 62, 80)"
+Expected: visible
 Timeout: 10000ms
 Error: element(s) not found
 
 Call log:
-  - Expect "toHaveCSS" with timeout 10000ms
+  - Expect "toBeVisible" with timeout 10000ms
   - waiting for locator('nav')
 
 ```
@@ -59,7 +59,8 @@ Call log:
   8   |   test('should display navigation bar with application name', async ({ page }) => {
   9   |     // Check if navigation bar exists
   10  |     const nav = page.locator('nav');
-  11  |     await expect(nav).toBeVisible();
+> 11  |     await expect(nav).toBeVisible();
+      |                       ^ Error: expect(locator).toBeVisible() failed
   12  |     
   13  |     // Check application name/logo
   14  |     const appName = page.locator('h1', { hasText: '💰 Application' });
@@ -78,8 +79,7 @@ Call log:
   27  |     const nav = page.locator('nav');
   28  |     
   29  |     // Verify navigation bar background color
-> 30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
-      |                       ^ Error: expect(locator).toHaveCSS(expected) failed
+  30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
   31  |     
   32  |     // Verify padding
   33  |     await expect(nav).toHaveCSS('padding', '16px 32px');
@@ -161,15 +161,4 @@ Call log:
   109 |     await expect(nav).toBeVisible();
   110 |   });
   111 | 
-  112 |   test('h1 element should have correct font size', async ({ page }) => {
-  113 |     const heading = page.locator('h1', { hasText: '💰 Application' });
-  114 |     await expect(heading).toHaveCSS('font-size', '24px'); // 1.5rem = 24px
-  115 |     await expect(heading).toHaveCSS('margin', '0px');
-  116 |   });
-  117 | 
-  118 |   test('user email should have correct font size', async ({ page }) => {
-  119 |     const userEmail = page.locator('span', { hasText: 'user1@example.com' });
-  120 |     await expect(userEmail).toHaveCSS('font-size', '14.4px'); // 0.9rem
-  121 |   });
-  122 | });
 ```

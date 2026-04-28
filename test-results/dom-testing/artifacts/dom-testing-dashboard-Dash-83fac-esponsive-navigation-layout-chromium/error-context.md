@@ -6,21 +6,21 @@
 
 # Test info
 
-- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> should have correct navigation bar styling
-- Location: dom-testing\dashboard.spec.ts:26:3
+- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> should have responsive navigation layout
+- Location: dom-testing\dashboard.spec.ts:71:3
 
 # Error details
 
 ```
-Error: expect(locator).toHaveCSS(expected) failed
+Error: expect(locator).toBeVisible() failed
 
 Locator: locator('nav')
-Expected: "rgb(44, 62, 80)"
+Expected: visible
 Timeout: 10000ms
 Error: element(s) not found
 
 Call log:
-  - Expect "toHaveCSS" with timeout 10000ms
+  - Expect "toBeVisible" with timeout 10000ms
   - waiting for locator('nav')
 
 ```
@@ -78,8 +78,7 @@ Call log:
   27  |     const nav = page.locator('nav');
   28  |     
   29  |     // Verify navigation bar background color
-> 30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
-      |                       ^ Error: expect(locator).toHaveCSS(expected) failed
+  30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
   31  |     
   32  |     // Verify padding
   33  |     await expect(nav).toHaveCSS('padding', '16px 32px');
@@ -126,7 +125,8 @@ Call log:
   74  |     
   75  |     // Navigation should still be visible
   76  |     const nav = page.locator('nav');
-  77  |     await expect(nav).toBeVisible();
+> 77  |     await expect(nav).toBeVisible();
+      |                       ^ Error: expect(locator).toBeVisible() failed
   78  |     
   79  |     // Navigation items should still be in flexbox layout
   80  |     const navContainer = page.locator('nav > div').first();

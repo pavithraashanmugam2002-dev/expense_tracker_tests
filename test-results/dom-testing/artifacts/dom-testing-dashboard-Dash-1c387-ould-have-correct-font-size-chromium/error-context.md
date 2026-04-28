@@ -6,22 +6,22 @@
 
 # Test info
 
-- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> should have correct navigation bar styling
-- Location: dom-testing\dashboard.spec.ts:26:3
+- Name: dom-testing\dashboard.spec.ts >> Dashboard Page >> user email should have correct font size
+- Location: dom-testing\dashboard.spec.ts:118:3
 
 # Error details
 
 ```
 Error: expect(locator).toHaveCSS(expected) failed
 
-Locator: locator('nav')
-Expected: "rgb(44, 62, 80)"
+Locator: locator('span').filter({ hasText: 'user1@example.com' })
+Expected: "14.4px"
 Timeout: 10000ms
 Error: element(s) not found
 
 Call log:
   - Expect "toHaveCSS" with timeout 10000ms
-  - waiting for locator('nav')
+  - waiting for locator('span').filter({ hasText: 'user1@example.com' })
 
 ```
 
@@ -49,25 +49,6 @@ Call log:
 # Test source
 
 ```ts
-  1   | import { test, expect, type Page } from '@playwright/test';
-  2   | 
-  3   | test.describe('Dashboard Page', () => {
-  4   |   test.beforeEach(async ({ page }) => {
-  5   |     await page.goto('/dashboard');
-  6   |   });
-  7   | 
-  8   |   test('should display navigation bar with application name', async ({ page }) => {
-  9   |     // Check if navigation bar exists
-  10  |     const nav = page.locator('nav');
-  11  |     await expect(nav).toBeVisible();
-  12  |     
-  13  |     // Check application name/logo
-  14  |     const appName = page.locator('h1', { hasText: '💰 Application' });
-  15  |     await expect(appName).toBeVisible();
-  16  |     await expect(appName).toHaveCSS('color', 'rgb(255, 255, 255)'); // white color
-  17  |   });
-  18  | 
-  19  |   test('should display user email in navigation', async ({ page }) => {
   20  |     // Check if user email is displayed
   21  |     const userEmail = page.locator('span', { hasText: 'user1@example.com' });
   22  |     await expect(userEmail).toBeVisible();
@@ -78,8 +59,7 @@ Call log:
   27  |     const nav = page.locator('nav');
   28  |     
   29  |     // Verify navigation bar background color
-> 30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
-      |                       ^ Error: expect(locator).toHaveCSS(expected) failed
+  30  |     await expect(nav).toHaveCSS('background-color', 'rgb(44, 62, 80)');
   31  |     
   32  |     // Verify padding
   33  |     await expect(nav).toHaveCSS('padding', '16px 32px');
@@ -169,7 +149,8 @@ Call log:
   117 | 
   118 |   test('user email should have correct font size', async ({ page }) => {
   119 |     const userEmail = page.locator('span', { hasText: 'user1@example.com' });
-  120 |     await expect(userEmail).toHaveCSS('font-size', '14.4px'); // 0.9rem
+> 120 |     await expect(userEmail).toHaveCSS('font-size', '14.4px'); // 0.9rem
+      |                             ^ Error: expect(locator).toHaveCSS(expected) failed
   121 |   });
   122 | });
 ```
