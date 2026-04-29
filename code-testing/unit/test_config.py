@@ -8,7 +8,7 @@ from app.core.config import Settings
 class TestSettings:
     def test_default_mongodb_url(self):
         settings = Settings()
-        assert settings.MONGODB_URL == "mongodb://localhost:27017"
+        assert settings.MONGODB_URL == "mongodb+srv://pavithraashanmugam2002_db_user:1tcysy6umuoTOH4h@sdlcforgedev.zg3gi9x.mongodb.net/?appName=SDLCForgeDev"
 
     def test_default_mongodb_database(self):
         settings = Settings()
@@ -31,13 +31,13 @@ class TestSettings:
         assert settings.SESSION_MAX_AGE == 86400
 
     def test_settings_from_env_variables(self, monkeypatch):
-        monkeypatch.setenv("MONGODB_URL", "mongodb://custom:27017")
+        monkeypatch.setenv("MONGODB_URL", "mongodb+srv://pavithraashanmugam2002_db_user:1tcysy6umuoTOH4h@sdlcforgedev.zg3gi9x.mongodb.net/?appName=SDLCForgeDev")
         monkeypatch.setenv("MONGODB_DATABASE", "custom_db")
         monkeypatch.setenv("FRONTEND_ORIGIN", "http://custom:3000")
         monkeypatch.setenv("SESSION_SECRET_KEY", "custom_secret")
         
         settings = Settings()
-        assert settings.MONGODB_URL == "mongodb://custom:27017"
+        assert settings.MONGODB_URL == "mongodb+srv://pavithraashanmugam2002_db_user:1tcysy6umuoTOH4h@sdlcforgedev.zg3gi9x.mongodb.net/?appName=SDLCForgeDev"
         assert settings.MONGODB_DATABASE == "custom_db"
         assert settings.FRONTEND_ORIGIN == "http://custom:3000"
         assert settings.SESSION_SECRET_KEY == "custom_secret"
